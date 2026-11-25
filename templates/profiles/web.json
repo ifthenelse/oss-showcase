@@ -1,0 +1,1 @@
+{"quickstart":"Try the app","preferred_demo":"playwright","sections":["Primary user flow","Local setup and requirements","Data and privacy","Supported browsers and license"],"evidence":["routes and configuration","fixture setup","browser and integration tests"],"example":"Show one complete flow using local seeded data in a clean browser context."}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Project social card</title>
+<style>
+  :root { color-scheme: dark; --surface: #121922; --text: #eff5fa; --accent: #9ccaff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--surface); color: var(--text); font: 42px/1.24 system-ui, sans-serif; }
+  main { width: 1280px; height: 640px; padding: 72px 88px; border-top: 12px solid var(--accent);
+         display: grid; align-content: center; }
+  h1 { margin: 0; font-size: 88px; line-height: 1.06; overflow-wrap: anywhere; }
+  p { margin: 24px 0 0; max-width: 32ch; overflow-wrap: anywhere; }
+  img { display: block; width: auto; height: 96px; max-width: 320px; object-fit: contain; margin-bottom: 32px; }
+</style>
+</head>
+<body>
+  <main>
+    <h1 id="product"></h1>
+    <p id="tagline"></p>
+  </main>
+</body>
+</html>

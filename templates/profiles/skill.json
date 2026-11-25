@@ -1,0 +1,1 @@
+{"quickstart":"Install and invoke","preferred_demo":"vhs","sections":["Supported hosts and skill paths","Example prompts","Resources and optional tools","Permissions and outputs"],"evidence":["SKILL.md","bundled references and scripts","host invocation smoke checks"],"example":"Demonstrate an explicit invocation and a verified artifact in a temporary repository."}

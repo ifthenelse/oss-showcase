@@ -1,0 +1,1 @@
+{"quickstart":"Install and import","preferred_demo":"vhs","sections":["Supported runtimes","Public API","Error handling","Versioning and license"],"evidence":["package exports","runtime constraints","public tests and runnable examples"],"example":"Execute a minimal example using a public import and show the actual result."}

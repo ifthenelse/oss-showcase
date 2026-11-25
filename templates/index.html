@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title</title>
+  <meta name="description" content="$summary">
+  <link rel="canonical" href="$canonical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$title">
+  <meta property="og:description" content="$summary">
+  <meta property="og:url" content="$canonical">
+  <meta name="twitter:card" content="$card">
+  $social
+  $favicon
+  <link rel="stylesheet" href="assets/showcase.css">
+  $schema
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <nav aria-label="Primary"><a href="#quickstart">$quickstart</a> <a href="$repo">$repository</a></nav>
+  </header>
+  <main class="wrap" id="main">
+    <h1>$title</h1>
+    $logo
+    <p class="intro">$summary</p>
+    $demo
+    <section id="quickstart">
+      <h2>$quickstart</h2>
+      <p>$setup</p>
+      <pre><code>$example</code></pre>
+      $result
+    </section>
+    $sections
+  </main>
+</body>
+</html>

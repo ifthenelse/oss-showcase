@@ -1,0 +1,34 @@
+:root {
+  color-scheme: light dark;
+  --ink: light-dark(#172331, #eff5fa);
+  --paper: light-dark(#fbfcfe, #121922);
+  --panel: light-dark(#edf2f7, #223040);
+  --accent: light-dark(#1155a3, #9ccaff);
+  --line: light-dark(#c6d2df, #496076);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font: 1rem/1.6 system-ui, sans-serif;
+}
+
+.wrap { width: min(68ch, 100% - 2rem); margin-inline: auto; }
+header { padding-block: 1.5rem; }
+nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+main { padding-block: 1rem 4rem; }
+h1 { font-size: clamp(2rem, 6vw, 4rem); line-height: 1.1; overflow-wrap: anywhere; }
+h2 { line-height: 1.2; }
+.intro { font-size: 1.25rem; }
+a { color: var(--accent); text-underline-offset: .18em; }
+:focus-visible { outline: .18rem solid var(--accent); outline-offset: .25rem; }
+.skip:not(:focus) { position: absolute; clip-path: inset(50%); }
+.skip:focus { position: absolute; inset: .5rem auto auto .5rem; background: var(--paper); }
+figure { margin: 2rem 0; }
+img, video { display: block; max-width: 100%; height: auto; }
+.logo { width: min(12rem, 100%); }
+section { margin-block: 2rem; }
+pre { overflow: auto; background: var(--panel); border: 1px solid var(--line); padding: 1rem; }

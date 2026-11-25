@@ -1,0 +1,97 @@
+{
+  "facts": {
+    "inputs": [
+      "package.json",
+      "src/cli.js",
+      "test/cli.test.js"
+    ],
+    "outputs": [
+      ".agents/product-facts.json",
+      ".agents/product-marketing.md"
+    ]
+  },
+  "brand": {
+    "inputs": [
+      ".agents/product-marketing.md"
+    ],
+    "outputs": [
+      ".agents/brand-guidelines.md",
+      "docs/assets/logo.svg",
+      "docs/assets/social.png"
+    ]
+  },
+  "demo": {
+    "inputs": [
+      ".agents/showcase/demo/demo.tape",
+      ".agents/showcase/demo/toolchain.md",
+      "examples/sample.txt",
+      "src/cli.js",
+      "test/cli.test.js"
+    ],
+    "outputs": [
+      "docs/assets/demo.gif"
+    ]
+  },
+  "presentation": {
+    "inputs": [
+      ".agents/product-facts.json",
+      ".agents/product-marketing.md",
+      ".agents/brand-guidelines.md",
+      "docs/assets/logo.svg",
+      "docs/assets/social.png",
+      "docs/assets/demo.gif",
+      ".agents/showcase/templates/index.html",
+      ".agents/showcase/templates/showcase.css",
+      ".agents/showcase/templates/README.md.in"
+    ],
+    "outputs": [
+      "README.md",
+      "docs/index.html",
+      "docs/sitemap.xml",
+      "docs/assets/showcase.css"
+    ]
+  },
+  "deployment": {
+    "inputs": [
+      ".agents/showcase/public.json"
+    ],
+    "outputs": [
+      ".agents/showcase/validate.py",
+      ".github/workflows/oss-showcase-pages.yml"
+    ]
+  },
+  "discovery": {
+    "inputs": [
+      ".agents/product-facts.json",
+      "docs/index.html",
+      "docs/assets/social.png"
+    ],
+    "outputs": [
+      "docs/sitemap.xml",
+      ".agents/showcase/public.json"
+    ]
+  },
+  "quality": {
+    "inputs": [
+      "README.md",
+      ".agents/showcase/public.json",
+      ".github/workflows/oss-showcase-pages.yml"
+    ],
+    "outputs": [
+      ".agents/showcase/quality.md"
+    ]
+  },
+  "distribution": {
+    "inputs": [
+      ".agents/product-facts.json",
+      ".agents/product-marketing.md",
+      ".agents/brand-guidelines.md",
+      "docs/assets/demo.gif",
+      "docs/assets/social.png",
+      "CHANGELOG.md"
+    ],
+    "outputs": [
+      ".agents/showcase/launch/README.md"
+    ]
+  }
+}

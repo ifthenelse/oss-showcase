@@ -1,0 +1,1 @@
+{"quickstart":"Quickstart","preferred_demo":"vhs","sections":["Installation and prerequisites","Commands and exit codes","Configuration","Compatibility","License and contributing"],"evidence":["package manifest or installer","CLI entry point and help","smoke tests and fixture output"],"example":"Show one command operating on a bundled synthetic fixture and its observed output."}
