@@ -1,4 +1,4 @@
-# Execution and human checkpoints
+# Execution and approvals
 
 ## Service preflight
 
@@ -6,17 +6,21 @@ At the beginning of every invocation, identify only the services needed for the 
 
 Record service, needed capability, expected and verified target, authentication and scope result, timestamp, and fallback in the handoff. Use statuses ready, public-only, unavailable, unauthorized and unverified. If MCP is missing, report it first, then use an authorized official CLI with a verified account or use public read-only sources. Do not install tools, authenticate a new account or start a paid service implicitly. Block only steps that require missing access. Recheck stale or changed scopes and confirm the account, destination and authorization immediately before external writes. For audit keep the handoff in memory or scratch.
 
-## Separate modes
+## Guided workflow
 
-| Mode | Scope | Handoff |
-| --- | --- | --- |
-| research | Market, positioning and domain candidates | Research memo and decisions |
-| build (init, refresh) | Assets, demos, README, site, local checks | Artifact paths, fingerprints and results |
-| plan (launch) | Draft release, publication and channel plan, package requests | Exact targets, release ref, approved artifact hashes and validation |
-| publish | Execute an explicitly approved plan for named targets only | URLs, job IDs, submission and acceptance status |
+1. Resolve the target folder or repository, ref or release, existing assets and `docs/HANDOFF.md`. Inspect read-only and present an ordered plan before acting, starting with the first step that needs work. Propose a README glow-up, a real fixture-based demo, the project page, SEO and AEO, quality checks and GitHub Pages publication. Include separate draft and publication steps for Product Hunt, X and Reddit. Mark existing verified results as reusable and identify dependencies, unavailable tools and any release, license or account blockers. List planned file changes and public destinations. If only a remote repository is provided, keep the ledger in its local working copy or clone.
+2. At the start of each ready step, state the change, destination and any external effect. Offer **Proceed**, **Proceed with this and remaining steps**, **Skip** and **Pause**. Wait for the reply unless the step is already covered by current approval. **Proceed** authorizes one step. **Proceed with this and remaining steps**, or an equivalent request to run the shown plan autonomously, authorizes its remaining eligible steps within the stated scope. Continue those steps in order without repeating the prompt. On Skip or an explicit refusal, record the step as skipped and move to the next ready step. Leave unanswered steps pending. If a prerequisite was skipped or failed, record the dependent step as blocked and continue to the next independent step. Respect a pause or change of scope and hand off any remainder when no ready step remains.
+3. Apply the [publication rules](#publication) to deployments, public posts and submissions. After a separate decision, continue the other steps covered by autonomous approval.
+4. Record the plan and the first decision before starting a confirmed operation. Update the ledger after each attempt, including skips and blockers. Mark a step complete only after its checks pass. At the next session, read the ledger first and recheck drift. Reuse verified completed work and any applicable user authorization that can be verified from the conversation. Ask before executing a pending step without such authorization or reopening a skipped step.
 
-Keep legacy prepare-release and audit behavior. Keep the prior explicitly scoped package submission option for launch; treat it as authorization for that separate package request step only. Plain launch and build have no external writes. Before publishing compare release, files and destinations against the approved plan. Reuse verified work, and route changed content back for review. Authorization applies only to listed actions and targets. Stop affected writes on drift or uncertain results, confirm remote state before retry, and record successful actions so a rerun skips them.
+## Handoff
 
-## Keep model work small
+Keep `docs/HANDOFF.md` in the target project as a concise ledger. Record the target ref, dated decisions and the latest verified state of each planned step using Pending, In progress, Done, Skipped or Blocked. Record whether the user chose step-by-step or autonomous execution, the approved scope, and any step needing a separate decision. Include the next action or blocker and link to existing drafts, artifacts, checks and remote results where relevant. Preserve unrelated content in an existing handoff. Keep credentials, private material and personal data out of the file. Exclude it from public artifacts, including deployments that serve `docs/`. If exclusion cannot be verified, pause publication.
 
-Read existing facts, fingerprints and the handoff first. Open only the reference and supporting skill needed for the current stage. If the inputs and outputs match, skip generation. Use local scripts for hashing, rendering and tests. Save compact evidence summaries and artifact paths instead of replaying raw output. Group parallel read-only probes where possible. Batch consequential choices such as name, domain and launch scope into one review. Reuse prior decisions and explicit authorization when still current. Keep approved assets and plans portable across sessions as Markdown or JSON. Never require a host-specific orchestration feature, background agent or CI model call.
+When pausing, ending or transferring unfinished work, explicitly use `mattpocock-skills:handoff` if available. Follow its instructions to write the session handoff outside the repository in the operating system's temporary directory. Link back to `docs/HANDOFF.md` and existing artifacts instead of repeating them. If unavailable, use the project ledger as the handoff and report the fallback.
+
+## Publication
+
+Build and plain launch produce local artifacts. Audit is read-only. Require explicit authorization for commits, pushes, pull requests, submissions, deployments and external settings changes. For each external write, show the exact account, destination, final payload or artifact and settings that will change. Confirm the operation once all details are known. An autonomous approval covers an external write only if those details were shown and explicitly included. Use the host's required approval flow when applicable.
+
+Compare the ref, files or artifact hashes and destination with the approved plan. Ask again for any material change. After an uncertain outcome, verify remote state before retrying. Record verified URLs, job IDs and submission status so a later run can reuse completed work. Follow the relevant [Pages](publishing.md#publish-to-github-pages) or [channel](distribution.md#publish-approved-channel-material) procedure.

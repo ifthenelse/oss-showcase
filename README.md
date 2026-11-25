@@ -1,62 +1,28 @@
 # OSS Showcase
 
-An Agent Skill for creating and maintaining the public presentation of open source projects. It includes profile templates, a deterministic static site generator and a standalone Pages validator.
+An Agent Skill that turns repository evidence into a README, a reproducible demo, a static project site and launch materials. It includes a deterministic generator and a standalone GitHub Pages validator.
 
-## Installation
+## Install
 
-From the unpacked directory, run the installer. It copies the skill files to `~/.agents/skills/oss-showcase/` and links them from `~/.claude/skills/oss-showcase` for Claude Code.
-
-```sh
-sh scripts/install.sh
-```
-
-Run the installer only when both destinations are available for a new install. It refuses to replace an existing copy or link. Install dependencies separately only when a run requires them.
-
-## Invocation
-
-Open a session in the target repository. In Codex, select the skill with `$oss-showcase`. In Claude Code, use `/oss-showcase`.
-
-| Mode | Codex | Claude Code |
-| --- | --- | --- |
-| Create | `$oss-showcase init` | `/oss-showcase init` |
-| Update | `$oss-showcase refresh` | `/oss-showcase refresh` |
-| Inspect | `$oss-showcase audit` | `/oss-showcase audit` |
-| Release | `$oss-showcase prepare-release v1.2.0` | `/oss-showcase prepare-release v1.2.0` |
-| Draft launch | `$oss-showcase launch` | `/oss-showcase launch` |
-
-Supply a package path in a monorepo and a public site URL if known. The skill resolves supporting skills at the relevant stage and reports fallbacks. See the [main workflow](SKILL.md) and [generation reference](references/state.md) for direct script commands.
-
-[Codex skill locations](https://developers.openai.com/api/reference/cli) · [Claude Code skills](https://code.claude.com/docs/en/skills)
-
-For an app or CLI, plain launch prepares package requests. To submit eligible requests for a specific release and selected channels, use `$oss-showcase launch --submit-packages v1.2.0 homebrew,winget` in Codex or `/oss-showcase launch --submit-packages v1.2.0 homebrew,winget` in Claude Code. See [package distribution](references/packages.md).
-
-## Publish to GitHub Pages
-
-Use `$oss-showcase publish` in Codex or `/oss-showcase publish` in Claude Code after approving the Pages deployment. OSS Showcase can enable Pages when needed and update the repository homepage after verifying the HTTPS site. It asks for confirmation before using a custom hostname. See [GitHub Pages publishing](references/publishing.md#publish-to-github-pages).
-
-## Optional integrations
-
-[GitHub, Ahrefs, Product Hunt and Cloudflare](references/integrations.md) support research, discovery, deployment checks and [launch planning](references/distribution.md) when the active host exposes the relevant tools.
-
-## Checks
-
-Run `scripts/verify` for fixture coverage across all six profiles. The tests exercise repeat generation, read-only planning, stage fingerprints, protection for existing files, shared media references, base paths and public artifact scope. Recording tools and hosted deployment are exercised separately in the target project. See [CONTRIBUTING.md](CONTRIBUTING.md) for local hooks and pull requests.
-
-## Portable execution
-
-Install this repository with the skills CLI:
+Select your agent when prompted. The skills CLI supports Codex, Claude Code, GitHub Copilot and other hosts.
 
 ```sh
 npx skills add ifthenelse/oss-showcase --skill oss-showcase
 ```
 
-Select the installed agents interactively, including Codex, Claude Code or GitHub Copilot. Other skills CLI targets can use the same Agent Skills directory and supporting files. Capabilities depend on the active client, its tools and credentials. In a client without a dedicated invocation shortcut, write "Use the oss-showcase skill in research mode for this repository."
+From an unpacked source archive, `sh scripts/install.sh` is an alternative. It installs the skill under `~/.agents/skills/oss-showcase/` and links it from `~/.claude/skills/oss-showcase`. The installer preserves existing destinations.
 
-| Mode | Example prompt |
-| --- | --- |
-| Research | Use oss-showcase research for this project and shortlist domains. |
-| Build | Use oss-showcase build to generate the assets and documentation locally. |
-| Plan | Use oss-showcase plan for v1.2.0 and draft the launch and package requests. |
-| Publish | Use oss-showcase publish to execute the approved v1.2.0 plan for the explicitly authorized destinations. |
+## Run a showcase
 
-See the [execution contract](references/execution.md) and [research procedure](references/research.md).
+Open the product folder or repository and invoke `$oss-showcase` in Codex or `/oss-showcase` in Claude Code. Supply a package path for a monorepo and a site URL if known. In other hosts, ask the agent to use OSS Showcase for that project.
+
+By default, the skill presents a plan first. Choose **Proceed** for one step, **Proceed with this and remaining steps** for scoped autonomy, or **Skip** or **Pause**. It tracks outstanding work in the target project's `docs/HANDOFF.md`.
+
+- [Operating modes](references/modes.md) lists explicit commands, including read-only audits and launch drafts.
+- [Guided workflow](references/execution.md#guided-workflow) explains approvals, autonomy and resuming work.
+- [Generation](references/state.md), [Pages publication](references/publishing.md#publish-to-github-pages) and [launch distribution](references/distribution.md) cover the main workflows.
+- [Optional integrations](references/integrations.md) lists supported capabilities and fallbacks across hosts.
+
+## Contribute
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and the PR workflow, [architecture](docs/architecture.md) for the package layout and [SECURITY.md](SECURITY.md) for private vulnerability reporting.

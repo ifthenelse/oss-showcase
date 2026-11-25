@@ -11,8 +11,6 @@ Discover tools in the active host only when a matching stage needs them. A plugi
 
 Ahrefs estimates describe the selected market and date. Keep them separate from observed Search Console data, public feature claims and adoption metrics. Batch a short keyword set where possible. Check plan access or paid usage before requesting broad reports. Do not create a project, start a paid crawl or connect Search Console as part of routine analysis.
 
-For a custom domain, verify the GitHub domain association and Pages settings before proposing the traffic DNS record. Record the exact host, target, record type and intended proxy setting. Once an authorized change has been made, verify HTTPS, redirects, canonical URL, sitemap and asset paths. The default GitHub Pages URL requires no Cloudflare setup. Use one canonical host. A move to Cloudflare hosting is a separate choice.
+Use the [service preflight and publication rules](execution.md) before using connected services. The generated workflow stages a local allowlist and runs independently of connectors.
 
-Read-only research can run during the corresponding mode. GitHub settings, workflow dispatch, release publication, DNS or proxy changes, Product Hunt posting or scheduling, and other external mutations each require explicit authorization for the specific target and operation. Keep connector calls outside routine CI. The generated workflow builds from the local allowlist and remains connector independent.
-
-[Product Hunt submission guide](https://help.producthunt.com/en/articles/17834537-4-build-your-product-page) · [GitHub Pages custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) · [Cloudflare proxy status](https://developers.cloudflare.com/dns/proxy-status/)
+[Product Hunt submission guide](https://help.producthunt.com/en/articles/17834537-4-build-your-product-page) · [Cloudflare proxy status](https://developers.cloudflare.com/dns/proxy-status/)

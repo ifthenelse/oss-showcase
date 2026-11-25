@@ -1,6 +1,10 @@
 # Contributing
 
-Use Python 3.12, Git and [Lefthook](https://lefthook.dev/installation/). Install the hooks once per clone with `lefthook install`. Run `scripts/verify` before opening a PR. The commit-message hook checks the header and the pre-push hook runs the same tests as CI.
+Use Python 3.12, Git and [Lefthook](https://lefthook.dev/installation/). Install the hooks once per clone with `lefthook install`.
+
+## Verification
+
+Run `scripts/verify` before opening a PR. The commit-message hook checks the header, and the pre-push hook and CI run the same suite. Temporary repositories and synthetic fixtures cover profile generation, read-only planning, fingerprints, file preservation, site URLs, public artifact scope, installer safety and commit headers. Verify hosted Pages, recording and optional integrations separately when relevant.
 
 ## Commits and review
 
