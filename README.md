@@ -30,17 +30,9 @@ Supply a package path in a monorepo and a public site URL if known. The skill re
 
 For an app or CLI, plain launch prepares package requests. To submit eligible requests for a specific release and selected channels, use `$oss-showcase launch --submit-packages v1.2.0 homebrew,winget` in Codex or `/oss-showcase launch --submit-packages v1.2.0 homebrew,winget` in Claude Code. See [package distribution](references/packages.md).
 
-## Standalone GitHub Pages skill
+## Publish to GitHub Pages
 
-Use [GitHub Pages](skills/github-pages/SKILL.md) to publish a static site, enable Pages when needed and set the repository homepage after verifying the HTTPS deployment. Confirm the exact hostname with the user before using a custom domain.
-
-Install it separately:
-
-```sh
-npx skills add https://github.com/ifthenelse/oss-showcase/tree/main/skills/github-pages
-```
-
-Invoke it with `$github-pages` in Codex or `/github-pages` in Claude Code.
+Use `$oss-showcase publish` in Codex or `/oss-showcase publish` in Claude Code after approving the Pages deployment. OSS Showcase can enable Pages when needed and update the repository homepage after verifying the HTTPS site. It asks for confirmation before using a custom hostname. See [GitHub Pages publishing](references/publishing.md#publish-to-github-pages).
 
 ## Optional integrations
 

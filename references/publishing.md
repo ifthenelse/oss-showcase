@@ -23,6 +23,27 @@ The workflow is manual dispatch from the default branch, passes only the explici
 
 [GitHub Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) · [Pages publishing source and custom domains](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [Google Search guidance for generative features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
 
+## Publish to GitHub Pages
+
+Use this procedure in `publish` mode for an approved Pages target. Resolve the exact repository and current publishing source, Pages URL, custom domain and repository homepage. Prefer the GitHub connector for supported operations. Use authenticated GitHub CLI or Settings for missing operations after confirming the account and its permission. If the Pages endpoint returns 404, also check the repository's `has_pages` or Settings before treating Pages as disabled.
+
+1. Reuse the existing Pages workflow or branch. When setting up the generated showcase workflow, use GitHub Actions as the publishing source. For an approved prebuilt static site without a workflow, a dedicated `gh-pages` branch with the validated files and `.nojekyll` is sufficient. Preserve the active source unless the user authorizes a migration.
+2. Compare the staged public files and target with the approved plan. Use the GitHub Pages hostname by default. Obtain explicit confirmation for the exact custom hostname before configuring it or using it in the repository homepage. Check domain ownership, DNS, Pages and HTTPS for an approved hostname. If a preexisting custom domain prevents use of the default URL, preserve that configuration and ask before choosing the custom URL. Change DNS only with authorization.
+3. Enable Pages if it is disabled. For a branch deployment, publish the reviewed files to the approved source and check Pages settings again because a push to `gh-pages` can enable Pages automatically. For Actions, dispatch the approved workflow on the default branch. Verify the deployment result and check the final HTTPS URL, expected content and key assets. Confirm the final hostname still matches the approved destination.
+4. Set the repository's `homepage` to the verified URL and read it back. Skip the update if it already matches. If verification fails, preserve the homepage and report the blocker. After an ambiguous write failure, read back GitHub state before retrying.
+
+For the authenticated CLI fallback, set `repo` to the confirmed `owner/repo` and `site_url` to the verified URL. Run only the creation command appropriate for a site that is still disabled.
+
+```sh
+gh api "repos/$repo/pages"
+gh api --method POST "repos/$repo/pages" -f build_type=workflow
+gh api --method POST "repos/$repo/pages" -f 'source[branch]=gh-pages' -f 'source[path]=/'
+gh api --method PATCH "repos/$repo" -f "homepage=$site_url"
+gh api "repos/$repo" --jq .homepage
+```
+
+Record the live URL, source, deployment result and homepage value. [Pages API](https://docs.github.com/en/rest/pages/pages) · [Custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) · [Repository homepage API](https://docs.github.com/en/rest/repos/repos#update-a-repository)
+
 ## Social card starter
 
 Copy `templates/social.html` and `templates/social.cjs` into the project demo or authoring directory. Tune the card CSS to the approved guidelines. Run the following from an environment where the script can resolve the existing Playwright dependency and browser. `social_tagline` is an optional shorter verified summary in the facts file.
