@@ -36,7 +36,7 @@ For an app or CLI, plain launch prepares package requests. To submit eligible re
 
 ## Checks
 
-Run `python3 scripts/test_showcase.py` for fixture coverage across all six profiles. The tests exercise repeat generation, read-only planning, stage fingerprints, protection for existing files, shared media references, base paths and public artifact scope. Recording tools and hosted deployment are exercised separately in the target project.
+Run `scripts/verify` for fixture coverage across all six profiles. The tests exercise repeat generation, read-only planning, stage fingerprints, protection for existing files, shared media references, base paths and public artifact scope. Recording tools and hosted deployment are exercised separately in the target project. See [CONTRIBUTING.md](CONTRIBUTING.md) for local hooks and pull requests.
 
 ## Portable execution
 

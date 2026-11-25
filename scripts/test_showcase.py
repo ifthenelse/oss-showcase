@@ -10,6 +10,26 @@ from showcase import FACTS, PACKAGE, PROFILES, STATE, WORKFLOW
 from validate import PUBLIC_MANIFEST
 
 
+class CommitHeaderTest(unittest.TestCase):
+    def test_conventional_headers(self):
+        script = PACKAGE / "scripts/check_commit_header.py"
+        cases = {
+            "fix: check public files": True,
+            "feat(generator)!: add a required field": True,
+            "fix: document migration\n\nBREAKING CHANGE: rename the field": True,
+            "feat: ": False,
+            "feat(scope) : bad separator": False,
+            "Update the generator": False,
+        }
+        for message, valid in cases.items():
+            with self.subTest(message=message):
+                result = subprocess.run(
+                    [sys.executable, str(script)], input=message,
+                    text=True, capture_output=True,
+                )
+                self.assertEqual(result.returncode, 0 if valid else 1, result.stderr)
+
+
 class ShowcaseTest(unittest.TestCase):
     def setUp(self):
         temporary = tempfile.TemporaryDirectory()
