@@ -8,6 +8,10 @@ Use stage 10 in [stage routing](stages.md) and the relevant read capabilities in
 | --- | --- |
 | Before launch | Verify public quickstart, visible limitations, primary landing URL, release assets and demo. Research relevant examples and communities. Prepare a claim bank that pairs each proposed hook with a source path, test or demonstrated result. |
 | Launch day | Prepare Product Hunt tagline, gallery and maker comment. Prepare a Show HN title and first comment centered on the technical problem and something readers can try. Write an X post with the real demo and one result. Draft Reddit posts per community with disclosure of the author's relationship and a useful technical explanation. Stagger only where rules, audience and maintainer availability support it. |
-| Follow-up | Prepare responses to likely questions and a second post using verified feedback or a new example. Record actual reach, referral visits and repository activity if available. Keep submissions and responses as drafts. |
+| Follow-up | Prepare responses to likely questions and a second post using verified feedback or a new example. Record actual reach, referral visits and repository activity if available. Keep submissions and responses as drafts in `launch` mode. |
 
 Select additional destinations by fit, such as GitHub Releases, DEV, Lobsters, package registries, MCP directories and language or framework communities. Check eligibility and rules per channel. Use one supported promise, real example and intended reader for each draft. Use campaign links only when allowed and keep tracking parameters out of the site canonical. Keep the tracker in draft status and omit unsupported claims, engagement promises and solicitation of votes.
+
+## Publish approved channel material
+
+Treat Product Hunt, X and each Reddit community as separate publication steps. Check current platform and community rules and use the [publication rules](execution.md#publication) with the exact Product Hunt listing or scheduled date, X post and media, or Reddit title, body, subreddit, flair and affiliation disclosure, as applicable. Execute only the approved operation using a supported tool. If the channel requires a manual submission, record it as pending with the draft and exact next action. Verify and record the resulting URL and whether it was posted, scheduled or submitted for review.

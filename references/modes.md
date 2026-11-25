@@ -1,16 +1,20 @@
 # Operating modes
 
-| Mode | Scope and stage order |
-| --- | --- |
-| init | Run 1 through 9. Inventory existing deliverables first. Create shared context, safe demo, README, static site, social image, metadata, sitemap, validation and draft Pages workflow. Stage 10 runs only when launch material is requested. |
-| refresh | Calculate stage status. Reopen stages whose inputs or declared outputs changed. Use field-level comparisons and preserve existing decisions and unchanged media. Validate affected surfaces. |
-| audit | Inventory and inspect existing surfaces using relevant parts of 1 and 4 through 9. Run validators read-only. Pass audit-only constraints to each dependency. Keep browser recordings, diagnostics and baselines in temporary storage. End with severity, evidence, affected path and remediation. |
-| prepare-release | Resolve the requested release with manifests, tag/ref and changelog. If the ref differs from the working tree, inspect or test it in an isolated checkout. Update verified versions, install commands, compatibility, release links and examples. Refresh demo only when its inputs or displayed version changed. Run affected gates, draft release notes if applicable and report the tested ref. |
-| publish | Execute the explicitly approved plan for the named targets. For GitHub Pages, follow the [publication procedure](publishing.md#publish-to-github-pages) to deploy, verify HTTPS and update the repository homepage. |
-| launch | Run readiness checks and stage 10. Use the latest verified facts, approved media and canonical links. Draft a channel schedule, directory shortlist and submission tracker, tailored outreach and posts in `.agents/showcase/launch/` or the existing release-planning location. Keep status at draft. |
+Invoke `$oss-showcase [mode]` in Codex or `/oss-showcase [mode]` in Claude Code. Use the guided default for a ready product and audit for an explicitly read-only review. Stage numbers refer to [stage routing](stages.md).
 
-With no explicit mode, infer from the desired outcome. Use audit for a request framed as review. Complete independent stages when a creative decision, missing tooling, unavailable evidence or a public URL blocks another stage. Report unresolved dependencies and leave the affected stage unrecorded.
+| Mode | Scope |
+| --- | --- |
+| Guided (default) | Follow the [guided workflow](execution.md#guided-workflow). Plan the showcase, execute the approved steps and track the remainder. |
+| `research` | Produce the [market research and domain memo](research.md) before deciding on positioning or a site. |
+| `build` or `init` | For a new showcase, run stages 1–9 using the [generation workflow](state.md). Add stage 10 if launch drafts are requested. Build writes locally. |
+| `refresh` | Check [stage fingerprints](state.md#refresh-plan) and rerun stale or missing work. Preserve verified assets and review affected surfaces. |
+| `audit` | Inspect existing surfaces using relevant parts of stages 1 and 4–9. Run read-only checks, use scratch for diagnostics and report severity, evidence, affected paths and fixes. |
+| `prepare-release <ref>` | Verify the requested tag or ref and changelog. Inspect it in a scratch checkout if it differs from the working tree. Update release facts, install commands, examples and links. Refresh the demo if its inputs or displayed version changed. Run affected checks and draft release notes when needed. |
+| `plan [ref]` or `launch` | Check release and demo readiness. Draft the [channel plan](distribution.md), tracker and posts in `.agents/showcase/launch/` or the project's existing planning location. Include eligible [package drafts](packages.md) for apps and CLIs. |
+| `publish` | Execute the [approved plan](execution.md#publication) for the named destinations. Use the [Pages procedure](publishing.md#publish-to-github-pages) or [channel publication](distribution.md#publish-approved-channel-material) for the selected step. |
+
+For apps and CLIs, `launch --submit-packages <release> <channels>` authorizes only the named [package requests or PRs](packages.md), such as `launch --submit-packages v1.2.0 homebrew,winget`. Review and approval for other distribution remain separate.
 
 ## Existing repositories
 
-Respect existing public documentation, licenses, links and deployment workflows. Scope monorepo facts and fingerprints to the selected package. Put the showcase at the repo root under `docs/` by default. If the destination already serves a site, agree with existing architecture and reconcile manually, or use a dedicated showcase subdirectory within `docs/` with matching asset references and publish paths. The starter generator targets a single homepage in `docs/`. Never create a competing workflow for a site already deployed by the repo.
+Scope monorepo facts and fingerprints to the selected package. Preserve existing public documentation, licenses, links and deployment workflows. The generator targets a single homepage under `docs/`. Reconcile with an existing site or stage a separately scoped showcase with matching asset and publish paths.
