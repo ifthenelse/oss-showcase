@@ -4,7 +4,7 @@ An Agent Skill for creating and maintaining the public presentation of open sour
 
 ## Installation
 
-Place this entire directory at `~/.agents/skills/oss-showcase/`. For Claude Code, link the same directory from `~/.claude/skills/oss-showcase`. From the unpacked directory, run:
+From the unpacked directory, run the installer. It copies the skill files to `~/.agents/skills/oss-showcase/` and links them from `~/.claude/skills/oss-showcase` for Claude Code.
 
 ```sh
 sh scripts/install.sh

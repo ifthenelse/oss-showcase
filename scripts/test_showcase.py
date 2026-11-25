@@ -1,6 +1,8 @@
 """Offline smoke tests for generated artifacts and refresh state."""
 import json
+import os
 from pathlib import Path
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -28,6 +30,47 @@ class CommitHeaderTest(unittest.TestCase):
                     text=True, capture_output=True,
                 )
                 self.assertEqual(result.returncode, 0 if valid else 1, result.stderr)
+
+
+class InstallerTest(unittest.TestCase):
+    def test_installs_only_skill_files(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source = root / "source"
+            home = root / "home"
+            source.mkdir()
+            home.mkdir()
+            for name in ("README.md", "SKILL.md"):
+                shutil.copyfile(PACKAGE / name, source / name)
+            for name in ("references", "scripts", "templates"):
+                shutil.copytree(PACKAGE / name, source / name)
+            (source / ".git").mkdir()
+            (source / ".git/config").write_text("fixture")
+            (source / ".env").write_text("fixture")
+            (source / "templates/.env.local").write_text("fixture")
+            command = ["sh", str(source / "scripts/install.sh")]
+            env = {**os.environ, "HOME": str(home)}
+            installed = home / ".agents/skills/oss-showcase"
+
+            linked = source / "references/linked.md"
+            linked.symlink_to(source / ".env")
+            rejected = subprocess.run(command, env=env, capture_output=True, text=True)
+            self.assertNotEqual(rejected.returncode, 0)
+            self.assertIn("Expected a regular skill file", rejected.stderr)
+            self.assertFalse(installed.exists())
+            linked.unlink()
+
+            subprocess.run(command, env=env, check=True, capture_output=True)
+            subprocess.run(command, env=env, check=True, capture_output=True)
+            self.assertEqual((home / ".claude/skills/oss-showcase").resolve(), installed.resolve())
+            self.assertTrue((installed / "references/publishing.md").is_file())
+            self.assertTrue((installed / "templates/profiles/skill.json").is_file())
+            for name in (".git", ".env", "templates/.env.local"):
+                self.assertFalse((installed / name).exists())
+            subprocess.run(
+                [sys.executable, str(installed / "scripts/showcase.py"), "--help"],
+                check=True, capture_output=True,
+            )
 
 
 class ShowcaseTest(unittest.TestCase):
