@@ -9,7 +9,7 @@
   "release": "v0.1.0",
   "labels": {
     "quickstart": "Install and run",
-    "demo": "Play the terminal recording"
+    "demo": "Watch the guided walkthrough"
   },
   "setup": "From the folder you want to showcase, install the skill with Node.js and npm available. Choose your agent when prompted.",
   "example": "npx skills add ifthenelse/oss-showcase --skill oss-showcase",
@@ -39,9 +39,9 @@
   },
   "assets": {
     "demo": {
-      "path": "assets/showcase-demo.gif",
-      "alt": "The Task Counter fixture returns Tasks: 2 before OSS Showcase generates and validates its site.",
-      "caption": "The fixture outputs Tasks: 2. The generator builds the README and site, then the validator stages only the HTML, CSS, and sitemap."
+      "path": "assets/showcase-demo.mp4",
+      "alt": "OSS Showcase guided plan and first approval in Codex CLI, Claude Code CLI, and Claude Desktop",
+      "caption": "Codex CLI and Claude Code in the terminal and desktop app inspect the same synthetic Task Counter project. The skill proposes a showcase plan and asks how to proceed with the first step."
     },
     "poster": {"path": "assets/showcase-demo-poster.png"},
     "social": {

@@ -1,10 +1,10 @@
 {
   "files": {
-    "assets/showcase-demo-poster.png": "1ed08571f56994147bbfe025d8d97f5a60499d225dbd3f8a369a3ab7850e890b",
-    "assets/showcase-demo.gif": "b025110bcfcb481077122fed4739e4c35b80787051b73f7a2d467271ecb8cd86",
-    "assets/showcase.css": "df7c4c6b834510a014274308e59ef6dbc9a65b72e22f65afbc6ef8075a1ac09a",
+    "assets/showcase-demo-poster.png": "05593a207c29294c6b45c5fe51d3b91b8e8c5b3d92265d9cf8a9e6feb5a32bc1",
+    "assets/showcase-demo.mp4": "b874d2dbb14e5edc1c265b7da15265adf36c2b555e82c55716843f7340ec9cb0",
+    "assets/showcase.css": "360e3b5b1e0cc88181026c62517d1f014bf9d7f9f549c7e609c4313481d9e75a",
     "assets/social.png": "2ee4d9831c0515dc2f28faf9e08d2839fc47033b0b1208be28e647f553df1139",
-    "index.html": "4b3495dfabb4820f7352b4e4cebd8c1224d9066365cf8bd2b0ab5befd9c1f325",
+    "index.html": "ac7add3d6b1e81e76b806dc36addec139b6119c73ec60caf6db0a6d40965caf2",
     "sitemap.xml": "5f0ccb7c3b618db22536f958dea79cbc2c113ab0c37a5424a58a1a023771609c"
   },
   "url": "https://ifthenelse.github.io/oss-showcase/"
