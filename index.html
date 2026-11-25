@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSS Showcase</title>
+  <meta name="description" content="An Agent Skill for turning repository evidence into a README and a static project site, with a workflow for demos and launch drafts.">
+  <link rel="canonical" href="https://ifthenelse.github.io/oss-showcase/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OSS Showcase">
+  <meta property="og:description" content="An Agent Skill for turning repository evidence into a README and a static project site, with a workflow for demos and launch drafts.">
+  <meta property="og:url" content="https://ifthenelse.github.io/oss-showcase/">
+  <meta name="twitter:card" content="summary">
+
+
+  <link rel="stylesheet" href="assets/showcase.css">
+
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <nav aria-label="Primary"><a href="#quickstart">Install and invoke</a> <a href="https://github.com/ifthenelse/oss-showcase">Repository</a></nav>
+  </header>
+  <main class="wrap" id="main">
+    <h1>OSS Showcase</h1>
+
+    <p class="intro">An Agent Skill for turning repository evidence into a README and a static project site, with a workflow for demos and launch drafts.</p>
+
+    <section id="quickstart">
+      <h2>Install and invoke</h2>
+      <p>From a project directory, run the installation command and choose your agent. Start in a disposable repository and review the generated files before publishing.</p>
+      <pre><code>npx skills add ifthenelse/oss-showcase --skill oss-showcase</code></pre>
+
+    </section>
+    <section><h2>Start with a review</h2><p>In Codex, use $oss-showcase audit. In Claude Code, use /oss-showcase audit. Use init when you are ready to generate a showcase for the target project.</p></section>
+    <section><h2>Validate the public files</h2><p>The Python generator creates a static site. The bundled validator checks the output and stages the public files for GitHub Pages. Review the content and media before deployment.</p></section>
+  </main>
+</body>
+</html>
