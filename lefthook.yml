@@ -1,0 +1,8 @@
+commit-msg:
+  commands:
+    conventional-commit:
+      run: python3 scripts/check_commit_header.py "{1}"
+pre-push:
+  commands:
+    verify:
+      run: scripts/verify

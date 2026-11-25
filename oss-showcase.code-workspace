@@ -1,0 +1,22 @@
+{
+  "folders": [{ "path": "." }],
+  "settings": {
+    "[git-commit]": { "editor.rulers": [72, 120] },
+    "specstory.cloudSync.enabled": "never"
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "editorconfig.editorconfig",
+      "anthropic.claude-code",
+      "openai.chatgpt",
+      "github.copilot-chat"
+    ]
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      { "label": "verify", "type": "shell", "command": "${workspaceFolder}/scripts/verify", "group": "test" }
+    ]
+  }
+}

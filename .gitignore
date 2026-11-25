@@ -1,0 +1,18 @@
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Python and local artifacts
+__pycache__/
+*.py[cod]
+.venv/
+*.log
+.DS_Store
+
+# Local agent configuration and history
+.mcp.json
+.vscode/mcp.json
+.specstory/
+.claude/settings.local.json
+.claude/worktrees/

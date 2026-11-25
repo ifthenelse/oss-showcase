@@ -1,0 +1,8 @@
+# type(optional-scope)!: description
+# Examples:
+# feat(generator): support a new showcase profile
+# fix(validator): reject an asset outside the public manifest
+# refactor(profile)!: rename a required field
+#
+# Optional body and footers follow a blank line.
+# BREAKING CHANGE: describe the incompatibility and migration
