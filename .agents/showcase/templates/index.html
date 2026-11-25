@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="$lang">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title: README, Demos, and GitHub Pages</title>
+  <meta name="description" content="$summary">
+  <link rel="canonical" href="$canonical">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="$title: README, Demos, and GitHub Pages">
+  <meta property="og:description" content="$summary">
+  <meta property="og:url" content="$canonical">
+  <meta name="twitter:card" content="$card">
+$social
+  <link rel="stylesheet" href="assets/showcase.css">
+$schema
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <nav aria-label="Primary">
+      <a href="#quickstart">Quickstart</a>
+      <a href="#demo">Demo</a>
+      <a href="$repo">$repository</a>
+      <a href="$repo/releases/latest">Latest release</a>
+    </nav>
+  </header>
+  <main class="wrap" id="main">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>$title</h1>
+        <p class="intro">$summary</p>
+        <section id="quickstart" aria-labelledby="install-heading">
+          <h2 id="install-heading">$quickstart</h2>
+          <p>$setup</p>
+          <pre tabindex="0"><code>$example</code></pre>
+          $result
+        </section>
+      </div>
+      <section class="demo" id="demo" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">From fixture to public files</h2>
+        <img src="assets/showcase-demo-poster.png" width="1040" height="600" alt="Terminal output listing the three validated public files">
+        $demo
+      </section>
+    </div>
+    <div class="answers">
+$sections
+    </div>
+  </main>
+</body>
+</html>
