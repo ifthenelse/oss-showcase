@@ -22,15 +22,11 @@ For the packaged release, download and unpack the source archive from the releas
 
 ## Demo
 
-The generator builds a README and static site for a synthetic task counter. The validator stages three public files and leaves the fixture's private notes out of the artifact.
+[![Watch OSS Showcase in Codex and Claude Code](docs/assets/showcase-demo-poster.png)](docs/assets/showcase-demo.mp4)
 
-![Terminal recording showing README and site generation, followed by validation of the three public files](docs/assets/showcase-demo.gif)
+The recording shows Codex CLI, Claude Code CLI, and Claude Code in the Claude desktop app using the skill on the same synthetic Task Counter project. Each run proposes a showcase plan and pauses at the first decision. You can approve the current step, approve the remaining eligible steps, skip, or pause. Public publishing has its own approval.
 
-Reproduce the walkthrough from a checkout of this repository:
-
-```sh
-sh .agents/showcase/demo/run.sh
-```
+[Reproduce the guided walkthrough](.agents/showcase/demo/README.md).
 
 ## What you can do
 
