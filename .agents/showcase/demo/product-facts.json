@@ -1,0 +1,17 @@
+{
+  "profile": "cli",
+  "name": "Task Counter",
+  "summary": "A sample CLI that counts task names supplied on the command line.",
+  "repo_url": "https://code.example.org/task-counter",
+  "site_url": "https://example.org/task-counter/",
+  "setup": "Run the bundled script with Python 3.",
+  "example": "python3 task_counter.py build release",
+  "result": "Tasks: 2",
+  "code_language": "sh",
+  "evidence": {
+    "summary": ["task_counter.py"],
+    "setup": ["task_counter.py"],
+    "example": ["task_counter.py"],
+    "result": ["task_counter.py"]
+  }
+}

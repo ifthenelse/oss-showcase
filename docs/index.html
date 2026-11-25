@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OSS Showcase: README, Demos, and GitHub Pages</title>
+  <meta name="description" content="An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.">
+  <link rel="canonical" href="https://ifthenelse.github.io/oss-showcase/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OSS Showcase: README, Demos, and GitHub Pages">
+  <meta property="og:description" content="An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.">
+  <meta property="og:url" content="https://ifthenelse.github.io/oss-showcase/">
+  <meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://ifthenelse.github.io/oss-showcase/assets/social.png">
+  <meta property="og:image:alt" content="OSS Showcase. From repository evidence to a README, demo, and project site.">
+  <meta name="twitter:image" content="https://ifthenelse.github.io/oss-showcase/assets/social.png">
+  <meta name="twitter:image:alt" content="OSS Showcase. From repository evidence to a README, demo, and project site.">
+  <link rel="stylesheet" href="assets/showcase.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "url": "https://ifthenelse.github.io/oss-showcase/", "name": "OSS Showcase", "description": "An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site."}</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="wrap">
+    <nav aria-label="Primary">
+      <a href="#quickstart">Quickstart</a>
+      <a href="#demo">Demo</a>
+      <a href="https://github.com/ifthenelse/oss-showcase">Repository</a>
+      <a href="https://github.com/ifthenelse/oss-showcase/releases/latest">Latest release</a>
+    </nav>
+  </header>
+  <main class="wrap" id="main">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1>OSS Showcase</h1>
+        <p class="intro">An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.</p>
+        <section id="quickstart" aria-labelledby="install-heading">
+          <h2 id="install-heading">Install and run</h2>
+          <p>From the folder you want to showcase, install the skill with Node.js and npm available. Choose your agent when prompted.</p>
+          <pre tabindex="0"><code>npx skills add ifthenelse/oss-showcase --skill oss-showcase</code></pre>
+          <p>Open a session in the target project. Run $oss-showcase in Codex or /oss-showcase in Claude Code. The current default branch starts by proposing a plan.</p>
+        </section>
+      </div>
+      <section class="demo" id="demo" aria-labelledby="demo-heading">
+        <h2 id="demo-heading">From fixture to public files</h2>
+        <img src="assets/showcase-demo-poster.png" width="1040" height="600" alt="Terminal output listing the three validated public files">
+        <figure><a href="assets/showcase-demo.gif">Play the terminal recording</a><figcaption>The fixture outputs Tasks: 2. The generator builds the README and site, then the validator stages only the HTML, CSS, and sitemap.</figcaption></figure>
+      </section>
+    </div>
+    <div class="answers">
+<section><h2>What does OSS Showcase produce?</h2><p>It helps you prepare a README, a reproducible demo, a static project page, and launch drafts. Public claims and examples come from project files or tests. The static generator stages a reviewed file list before GitHub Pages deployment.</p></section>
+    <section><h2>What stays under your control?</h2><p>Approve one step at a time or authorize the remaining eligible steps in the plan. Public destinations and payloads need explicit approval. The skill records unfinished work in docs/HANDOFF.md in the target project.</p></section>
+    <section><h2>Can I review an existing project first?</h2><p>Yes. Use the audit mode for a read-only review of the existing showcase. Use launch mode to prepare channel drafts and publish mode to execute an approved publication.</p></section>
+    </div>
+  </main>
+</body>
+</html>
