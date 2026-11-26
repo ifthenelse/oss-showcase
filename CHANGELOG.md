@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 (2026-11-26)
+
+- Guide launch work through an ordered plan with per-step approvals and a handoff file for unfinished steps. Use native approval prompts and session tasks where the host supports them.
+- Start with market and competitor research, then set the brand direction before refreshing the README. Review the project site's copy, SEO, GEO, and AEO before planning launch posts and dates.
+- Refresh the OSS Showcase README and project site with the Otto S logo kit and demonstrations recorded in real agent clients.
+- Smoke-test the installed skill in CI. Publish project releases on demand from a verified commit on `main`.
+
 ## 0.1.0 (2026-11-25)
 
 Initial release of OSS Showcase, an Agent Skill for preparing a project's public presentation from repository evidence.
