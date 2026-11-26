@@ -6,7 +6,7 @@
 
 OSS Showcase is an Agent Skill for maintainers who want installation instructions, examples, and release materials to tell the same story. It starts with a plan you can review and uses a deterministic generator and validator for the static site.
 
-[Project site](https://ifthenelse.github.io/oss-showcase/) · [GitHub release v0.1.0](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.1.0) · [Operating modes](references/modes.md)
+[Project site](https://ifthenelse.github.io/oss-showcase/) · [GitHub release v0.2.0](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.2.0) · [Operating modes](references/modes.md)
 
 ## Quickstart
 
@@ -18,7 +18,7 @@ npx skills add ifthenelse/oss-showcase --skill oss-showcase
 
 Select an agent such as Codex, Claude Code, or GitHub Copilot. Open an agent session in the target project and invoke `$oss-showcase` in Codex or `/oss-showcase` in Claude Code. In other hosts, ask the agent to use OSS Showcase for the current project. For a monorepo, specify the package. Include your site URL if you know it.
 
-For the packaged release, download and unpack the source archive from the release page and run `sh scripts/install.sh`. The installer copies skill files to `~/.agents/skills/oss-showcase/` and creates a Claude Code link. Install from the default branch to use the guided workflow. The first tagged release predates it.
+For the packaged release, download and unpack the source archive from the release page and run `sh scripts/install.sh`. The installer copies skill files to `~/.agents/skills/oss-showcase/` and creates a Claude Code link. The guided workflow is available in v0.2.0.
 
 ## Guided showcase workflow
 

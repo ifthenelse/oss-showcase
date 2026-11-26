@@ -5,7 +5,7 @@ Prepared on 2026-11-26 (Europe/Rome). Read the [market discovery and competitor 
 ## Readiness
 
 - The [site](https://ifthenelse.github.io/oss-showcase/) and [public demo](https://ifthenelse.github.io/oss-showcase/#demo) are live. Deploy and verify the revised copy, metadata and preview card before sending launch traffic.
-- The [quickstart](../../../README.md#quickstart) installs from the default branch. The [latest tagged release](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.1.0) predates the guided workflow. The repository has no declared license.
+- The [quickstart](../../../README.md#quickstart) covers installation from the default branch and from the [v0.2.0 source archive](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.2.0). Both support the guided workflow. The repository has no declared license.
 - The [demo](../demo/README.md) shows Codex CLI, Claude Code CLI, and Claude Desktop on a synthetic CLI. The Codex Desktop clip is pending. Keep the client names and the recorded scope exact.
 
 ## Proposed calendar
