@@ -1,21 +1,28 @@
-# OSS Showcase launch drafts
+# OSS Showcase launch plan
 
-Prepared on 2026-11-26 (Europe/Rome) for maintainer review.
+Prepared on 2026-11-26 (Europe/Rome). Read the [market discovery and competitor memo](../research.md) before reviewing posts. The launch premise is simple: **Your code runs. Show people how.** Lead with the real pause before the first edit. Use the same proof across channels and give each audience a distinct reason to click or reply.
 
 ## Readiness
 
-- [Public site](https://ifthenelse.github.io/oss-showcase/) and [demo](https://ifthenelse.github.io/oss-showcase/#demo) are live. The demo shows Codex CLI, Claude Code CLI, and Claude Desktop. The Codex Desktop clip remains pending.
-- The drafts use the [current README quickstart](../../../README.md#quickstart) from `main` at `99f264391a7120c91c1e822c0d16978445197e6a`. The [latest published release](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.1.0) predates the guided workflow. The public repository has no declared license.
-- The [guided execution reference](../../../references/execution.md#guided-workflow) supports the approval and handoff claims. The [site workflow reference](../../../references/state.md) describes the generator and public allowlist. The [recording notes](../demo/README.md) describe the demo fixture and clients.
+- The [site](https://ifthenelse.github.io/oss-showcase/) and [public demo](https://ifthenelse.github.io/oss-showcase/#demo) are live. Deploy and verify the revised copy, metadata and preview card before sending launch traffic.
+- The [quickstart](../../../README.md#quickstart) installs from the default branch. The [latest tagged release](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.1.0) predates the guided workflow. The repository has no declared license.
+- The [demo](../demo/README.md) shows Codex CLI, Claude Code CLI, and Claude Desktop on a synthetic CLI. The Codex Desktop clip is pending. Keep the client names and the recorded scope exact.
 
-## Channel plan
+## Proposed calendar
 
-| Channel | Intended reader | Review material | Status |
-| --- | --- | --- | --- |
-| Product Hunt | Makers and maintainers looking for a repeatable launch workflow | [Listing, first comment and gallery](product-hunt/README.md) | Draft ready. Confirm the maker account, listing and schedule. |
-| X | Developers using coding agents to ship a project | [Post and demo attachment](x.md) | Draft ready. Confirm the posting account. |
-| Reddit | Side-project maintainers who can critique the first approval | [r/sideprojects post](reddit.md) | Draft ready. Recheck the rules, flair and posting account. |
+Dates and times are tentative. Confirm the maintainer's availability and each external action. Times are Europe/Rome unless noted.
 
-Dates are unset. Confirm the exact account, copy, assets and destination before each external post. For Product Hunt, also confirm the scheduling date in Pacific Time and the corresponding time in Europe/Rome.
+| When | Where and what | Why and prerequisite |
+| --- | --- | --- |
+| Fri Dec 4, 16:00 CET | GitHub Pages: publish and QA the revised landing. Run a clean quickstart and check the share preview. | Set the page that every channel will link to. Publish the reviewed artifact after approval. |
+| Mon Dec 7, 17:00 CET | [r/sideprojects feedback post](reddit.md), with the `Feedback Request` flair. | Get a technical critique of the approval screen before the main launch. Recheck current rules, flair, and posting history. |
+| Wed Dec 9, 09:01 CET / 00:01 PST | [Product Hunt listing](product-hunt/README.md) with three demo frames and the maker comment. | Use the main listing as the launch record. Schedule after the listing, date and maker account are approved. Be available to answer comments. |
+| Wed Dec 9, 18:00 CET / 09:00 PST | [X post](x.md) with the real demo and site link. | Show the approval moment during a Europe and US morning overlap. The timing is a practical choice. |
+| Fri Dec 11, 16:00 CET | Reply in the existing threads. Share one follow-up only if there is a real fix, new demo result, or useful answer. | Close the loop on feedback without recycling the launch copy. |
+| Wed Dec 16, 16:00 CET | Review results and choose the first improvement. | Compare sessions or clicks by source where available and separate reported first runs from impressions. |
 
-After each approved publication, record the permalink. Review available referral traffic and useful feedback after one day and one week. Use the feedback to decide whether a follow-up is warranted.
+[Product Hunt scheduling guidance](https://help.producthunt.com/en/articles/17734355-3-set-your-goals-and-pick-your-launch-date) · [r/sideprojects posting guidance](https://www.reddit.com/r/sideprojects/comments/1ld5xve/my_side_project_rsideprojects_new_rules_and_an/) · [X media limits](https://help.x.com/en/using-x/x-videos)
+
+## Measurement
+
+Record each permalink and check after one day and one week. Prioritize concrete feedback about install, approval, or output and independently reported first runs. Use available referral sessions, post link clicks, and repository traffic as supporting signals. Search impressions and AI citations are separate discovery metrics and require verified access. Never treat a metric that was not measured as zero.

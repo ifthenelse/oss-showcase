@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OSS Showcase: README, Demos, and GitHub Pages</title>
-  <meta name="description" content="An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.">
+  <title>OSS Showcase: Agent Skill for GitHub Project Launches</title>
+  <meta name="description" content="Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo.">
   <link rel="canonical" href="https://ifthenelse.github.io/oss-showcase/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OSS Showcase: README, Demos, and GitHub Pages">
-  <meta property="og:description" content="An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.">
+  <meta property="og:title" content="OSS Showcase: Agent Skill for GitHub Project Launches">
+  <meta property="og:description" content="Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo.">
   <meta property="og:url" content="https://ifthenelse.github.io/oss-showcase/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OSS Showcase: Agent Skill for GitHub Project Launches">
+  <meta name="twitter:description" content="Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo.">
 <meta property="og:image" content="https://ifthenelse.github.io/oss-showcase/assets/social.png">
-  <meta property="og:image:alt" content="OSS Showcase. From repository evidence to a README, demo, and project site.">
+  <meta property="og:image:alt" content="OSS Showcase and the Claude Desktop approval screen. Your code runs. Show people how.">
   <meta name="twitter:image" content="https://ifthenelse.github.io/oss-showcase/assets/social.png">
-  <meta name="twitter:image:alt" content="OSS Showcase. From repository evidence to a README, demo, and project site.">
+  <meta name="twitter:image:alt" content="OSS Showcase and the Claude Desktop approval screen. Your code runs. Show people how.">
   <link rel="icon" href="assets/otto-s-favicon.svg">
   <link rel="stylesheet" href="assets/showcase.css">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "url": "https://ifthenelse.github.io/oss-showcase/", "name": "OSS Showcase", "description": "An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site."}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareSourceCode", "url": "https://ifthenelse.github.io/oss-showcase/", "name": "OSS Showcase", "description": "Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo."}</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -34,24 +36,28 @@
     <div class="hero">
       <div class="hero-copy">
         <h1>OSS Showcase</h1>
-        <p class="intro">An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.</p>
+        <p class="intro">Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo.</p>
         <section id="quickstart" aria-labelledby="install-heading">
-          <h2 id="install-heading">Install and run</h2>
-          <p>From the folder you want to showcase, install the skill with Node.js and npm available. Choose your agent when prompted.</p>
+          <h2 id="install-heading">Install OSS Showcase</h2>
+          <p>From your project folder, run this command with Node.js and npm installed. Choose your agent when prompted.</p>
           <pre tabindex="0"><code>npx skills add ifthenelse/oss-showcase --skill oss-showcase</code></pre>
-          <p>Open a session in the target project. Run $oss-showcase in Codex or /oss-showcase in Claude Code. The current default branch starts by proposing a plan.</p>
+          <p>Run $oss-showcase in Codex or /oss-showcase in Claude Code. In GitHub Copilot, ask it to use OSS Showcase in the current project. It starts with an ordered plan.</p>
         </section>
       </div>
       <section class="demo" id="demo" aria-labelledby="demo-heading">
-        <h2 id="demo-heading">See the skill in action</h2>
-        <figure><video controls muted playsinline preload="none" aria-label="OSS Showcase guided plan and first approval in Codex CLI, Claude Code CLI, and Claude Desktop" poster="assets/showcase-demo-poster.png" src="assets/showcase-demo.mp4"></video><figcaption>Codex CLI and Claude Code in the terminal and desktop app inspect the same synthetic Task Counter project. The skill proposes a showcase plan and asks how to proceed with the first step.</figcaption></figure>
+        <h2 id="demo-heading">Watch the first decision</h2>
+        <figure><video controls muted playsinline preload="none" aria-label="OSS Showcase guided plan and first approval in Codex CLI, Claude Code CLI, and Claude Desktop" poster="assets/showcase-demo-poster.png" src="assets/showcase-demo.mp4"></video><figcaption>The 58-second recording shows the real clients giving a plan for the synthetic Task Counter project and pausing at the first decision.</figcaption></figure>
       </section>
     </div>
     <div class="answers">
-<section><h2>What does OSS Showcase produce?</h2><p>It helps you prepare a README, a reproducible demo, a static project page, and launch drafts. Public claims and examples come from project files or tests. The static generator stages a reviewed file list before GitHub Pages deployment.</p></section>
-    <section><h2>What stays under your control?</h2><p>Approve one step at a time or authorize the remaining eligible steps in the plan. Public destinations and payloads need explicit approval. The skill records unfinished work in docs/HANDOFF.md in the target project.</p></section>
-    <section><h2>Can I review an existing project first?</h2><p>Yes. Use the audit mode for a read-only review of the existing showcase. Use launch mode to prepare channel drafts and publish mode to execute an approved publication.</p></section>
+<section><h2>What is OSS Showcase?</h2><p>OSS Showcase is an Agent Skill for maintainers preparing a GitHub project launch. It uses repository files, examples, and tests to plan a README, reproducible demo, static Pages site, and channel drafts.</p></section>
+    <section><h2>What happens before the first edit?</h2><p>OSS Showcase proposes an ordered plan and asks how you want to proceed. Approve one step, approve the remaining eligible local steps, or skip the current step. The handoff records unfinished work. Public publishing requires a separate confirmation.</p></section>
+    <section><h2>What does the Task Counter demo show?</h2><p>A small Python CLI counts task names. The 58-second recording shows Codex CLI, Claude Code CLI, and Claude Desktop planning a showcase for that fixture and stopping at the first decision.</p></section>
+    <section><h2>Which files reach GitHub Pages?</h2><p>A Python generator builds static HTML, CSS, and a sitemap. The validator stages the files listed in the public manifest and rejects content that differs from the reviewed hashes. The handoff and private notes stay outside the Pages artifact.</p></section>
     </div>
+    <p>See the <a href="https://github.com/ifthenelse/oss-showcase/blob/main/references/execution.md#guided-workflow">approval rules</a>,
+      <a href="https://github.com/ifthenelse/oss-showcase/blob/main/.agents/showcase/demo/README.md">demo recipe</a>, and
+      <a href="https://github.com/ifthenelse/oss-showcase/blob/main/references/state.md">generator and validation guide</a>.</p>
   </main>
 </body>
 </html>

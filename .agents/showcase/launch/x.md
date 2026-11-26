@@ -2,12 +2,11 @@
 
 ## Post
 
-I built OSS Showcase for maintainers shipping a repo.
+Your code runs. Show people how.
 
-It reads the project, proposes a README, demo, and GitHub Pages plan, then asks before the first edit.
+🧪 We tried OSS Showcase on a tiny Python CLI. Codex and Claude proposed a README, a demo, and a GitHub Pages site, then paused for the first decision.
 
-Here are Codex and Claude trying it on a tiny Python CLI.
-
+Watch the run or try it on your repo.
 https://ifthenelse.github.io/oss-showcase/#demo
 
 ## Media

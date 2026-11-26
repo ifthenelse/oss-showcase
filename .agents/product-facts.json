@@ -1,54 +1,91 @@
 {
   "profile": "skill",
   "name": "OSS Showcase",
-  "summary": "An Agent Skill for maintainers. Build an evidence-backed README, record a reproducible demo, and generate and validate a static GitHub Pages site.",
-  "social_tagline": "From repository evidence to a README, demo, and project site.",
+  "summary": "Your code runs. Show people how. OSS Showcase is an Agent Skill for building a README, real demo, and GitHub Pages site from a working repo.",
+  "social_tagline": "Your code runs. Show people how.",
   "repo_url": "https://github.com/ifthenelse/oss-showcase",
   "site_url": "https://ifthenelse.github.io/oss-showcase/",
   "lang": "en",
   "release": "v0.1.0",
   "labels": {
-    "quickstart": "Install and run",
+    "quickstart": "Install OSS Showcase",
     "demo": "Watch the guided walkthrough"
   },
-  "setup": "From the folder you want to showcase, install the skill with Node.js and npm available. Choose your agent when prompted.",
+  "setup": "From your project folder, run this command with Node.js and npm installed. Choose your agent when prompted.",
   "example": "npx skills add ifthenelse/oss-showcase --skill oss-showcase",
-  "result": "Open a session in the target project. Run $oss-showcase in Codex or /oss-showcase in Claude Code. The current default branch starts by proposing a plan.",
+  "result": "Run $oss-showcase in Codex or /oss-showcase in Claude Code. In GitHub Copilot, ask it to use OSS Showcase in the current project. It starts with an ordered plan.",
   "sections": [
     {
-      "title": "What does OSS Showcase produce?",
-      "body": "It helps you prepare a README, a reproducible demo, a static project page, and launch drafts. Public claims and examples come from project files or tests. The static generator stages a reviewed file list before GitHub Pages deployment."
+      "title": "What is OSS Showcase?",
+      "body": "OSS Showcase is an Agent Skill for maintainers preparing a GitHub project launch. It uses repository files, examples, and tests to plan a README, reproducible demo, static Pages site, and channel drafts."
     },
     {
-      "title": "What stays under your control?",
-      "body": "Approve one step at a time or authorize the remaining eligible steps in the plan. Public destinations and payloads need explicit approval. The skill records unfinished work in docs/HANDOFF.md in the target project."
+      "title": "What happens before the first edit?",
+      "body": "OSS Showcase proposes an ordered plan and asks how you want to proceed. Approve one step, approve the remaining eligible local steps, or skip the current step. The handoff records unfinished work. Public publishing requires a separate confirmation."
     },
     {
-      "title": "Can I review an existing project first?",
-      "body": "Yes. Use the audit mode for a read-only review of the existing showcase. Use launch mode to prepare channel drafts and publish mode to execute an approved publication."
+      "title": "What does the Task Counter demo show?",
+      "body": "A small Python CLI counts task names. The 58-second recording shows Codex CLI, Claude Code CLI, and Claude Desktop planning a showcase for that fixture and stopping at the first decision."
+    },
+    {
+      "title": "Which files reach GitHub Pages?",
+      "body": "A Python generator builds static HTML, CSS, and a sitemap. The validator stages the files listed in the public manifest and rejects content that differs from the reviewed hashes. The handoff and private notes stay outside the Pages artifact."
     }
   ],
   "evidence": {
-    "summary": ["README.md", "SKILL.md", "scripts/showcase.py", "scripts/validate.py"],
-    "setup": ["README.md"],
-    "example": ["README.md"],
-    "result": ["README.md", "references/modes.md"],
-    "What does OSS Showcase produce?": ["SKILL.md", "scripts/showcase.py", "scripts/validate.py"],
-    "What stays under your control?": ["references/execution.md"],
-    "Can I review an existing project first?": ["references/modes.md"]
+    "summary": [
+      "README.md",
+      "SKILL.md",
+      "scripts/showcase.py"
+    ],
+    "setup": [
+      "README.md"
+    ],
+    "example": [
+      "README.md"
+    ],
+    "result": [
+      "README.md",
+      "references/execution.md"
+    ],
+    "What is OSS Showcase?": [
+      "SKILL.md",
+      "references/state.md",
+      "references/distribution.md"
+    ],
+    "What happens before the first edit?": [
+      "references/execution.md"
+    ],
+    "What does the Task Counter demo show?": [
+      ".agents/showcase/demo/README.md",
+      ".agents/showcase/demo/task_counter.py",
+      "docs/assets/showcase-demo.mp4"
+    ],
+    "Which files reach GitHub Pages?": [
+      "references/state.md",
+      "scripts/showcase.py",
+      "scripts/validate.py",
+      ".agents/showcase/public.json"
+    ]
   },
   "assets": {
-    "logo": {"path": "assets/otto-s.svg"},
-    "favicon": {"path": "assets/otto-s-favicon.svg"},
+    "logo": {
+      "path": "assets/otto-s.svg"
+    },
+    "favicon": {
+      "path": "assets/otto-s-favicon.svg"
+    },
     "demo": {
       "path": "assets/showcase-demo.mp4",
       "alt": "OSS Showcase guided plan and first approval in Codex CLI, Claude Code CLI, and Claude Desktop",
-      "caption": "Codex CLI and Claude Code in the terminal and desktop app inspect the same synthetic Task Counter project. The skill proposes a showcase plan and asks how to proceed with the first step."
+      "caption": "The 58-second recording shows the real clients giving a plan for the synthetic Task Counter project and pausing at the first decision."
     },
-    "poster": {"path": "assets/showcase-demo-poster.png"},
+    "poster": {
+      "path": "assets/showcase-demo-poster.png"
+    },
     "social": {
       "path": "assets/social.png",
-      "alt": "OSS Showcase. From repository evidence to a README, demo, and project site."
+      "alt": "OSS Showcase and the Claude Desktop approval screen. Your code runs. Show people how."
     }
   },
   "code_language": "sh",

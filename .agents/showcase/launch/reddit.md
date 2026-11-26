@@ -2,22 +2,22 @@
 
 **Destination** [r/sideprojects](https://www.reddit.com/r/sideprojects/)
 
-**Format** One text post with the `Feedback Request` flair if it is still available. Verify the current rules and whether the account has already posted this project before submitting.
+**Format** One text post with the `Feedback Request` flair if it is still available. Recheck community rules and prior posts before submitting.
 
 ## Title
 
-I built an Agent Skill that plans a README and demo before editing the repo
+What would you check before letting an agent rewrite your README?
 
 ## Body
 
-I maintain OSS Showcase, an Agent Skill for the last stretch of shipping a project. I'm looking for feedback on the first approval screen: is there enough information there to decide what the agent should do?
+I maintain OSS Showcase, an Agent Skill for people getting a GitHub repo ready to share. I’m trying to get one part right: what the agent shows you before it edits anything.
 
-The workflow reads the project and proposes a plan for the README, a demo, and a static GitHub Pages site. Each public claim can point to a file, example, or test in the repo. A Python script builds the site, and a separate validator stages only the reviewed files. The agent keeps unfinished work in a handoff so you can resume later.
+I tested it on Task Counter, a deliberately tiny Python CLI. Codex and Claude got far enough to propose a README, a demo, and a Pages site. The demo ends at the first decision. You can see which step is next and choose whether to run it.
 
-The demo uses a synthetic Python CLI that counts task arguments. It shows the point where Codex or Claude has read the fixture and asks before editing the README. Publishing has a separate approval.
+The Pages build is a separate Python script. A validator stages only files in the reviewed manifest, and publishing needs its own approval. The handoff keeps track of steps you haven’t done.
 
-Try it from a project folder with `npx skills add ifthenelse/oss-showcase --skill oss-showcase`. [Project page and demo](https://ifthenelse.github.io/oss-showcase/)
+[Here’s the run and the install command.](https://ifthenelse.github.io/oss-showcase/)
 
-Would you want to review the source evidence before the first edit, or is seeing the planned file changes enough?
+If this were your repo, would you want to see the files it plans to change or the source behind each claim first?
 
 [Community posting guidance](https://www.reddit.com/r/sideprojects/comments/1ld5xve/my_side_project_rsideprojects_new_rules_and_an/)

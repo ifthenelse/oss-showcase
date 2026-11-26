@@ -10,11 +10,11 @@ OSS Showcase
 
 **Tagline**
 
-Turn a repo into a README, demo, and project site
+Ship a README, real demo, and GitHub Pages site
 
 **Description**
 
-OSS Showcase is an Agent Skill for maintainers. It inspects a repository, proposes a launch plan, and helps prepare a README, reproducible demo, and GitHub Pages site backed by project evidence. Review each step, and approve public publishing separately.
+Your code runs. Show people how. OSS Showcase reads your repo and plans a README, real demo, and GitHub Pages site. You choose what the agent edits. A static generator and validator prepare the files you review before publishing.
 
 **Product URL**
 
@@ -30,13 +30,13 @@ Developer Tools, GitHub. Confirm available tags in the editor.
 
 ## First Maker comment
 
-Hi Product Hunt! I’m the maintainer of OSS Showcase. I built it to make the work around a release easier to review. The README, the demo, and the project page should all describe the same thing someone can actually try.
+👋 I maintain OSS Showcase. If you’ve ever opened a repo and wondered what to run first, that’s the problem this skill is meant to help with.
 
-Point the skill at a repository and it starts with a plan. You can approve a step, skip it, or let the agent continue through the remaining local work. It uses the repository as evidence for the public copy, and a separate confirmation covers publishing. The static site generator and validator also run independently of the agent.
+I tested it on Task Counter, a tiny Python CLI that counts task names. Codex and Claude read the fixture and proposed what to show. The clip ends at the first decision: do you want the agent to edit the README?
 
-In the demo, the tool is a tiny Python task counter. The useful moment is when Claude or Codex has read enough to propose what to show and asks before changing anything.
+The rest follows the same plan. The README, demo, and Pages site draw on the same repo evidence. The Python generator and validator prepare a reviewable site artifact. Publishing has its own confirmation.
 
-Try it from a project directory with `npx skills add ifthenelse/oss-showcase --skill oss-showcase`. I’d love to know which part of preparing a release takes you the most time: explaining the project, making a demo, or getting the project page ready?
+Try it from your project folder with `npx skills add ifthenelse/oss-showcase --skill oss-showcase`. Which part of getting a repo ready for strangers takes you longest: the first-run instructions, a real demo, or the project page?
 
 ## Upload assets
 
