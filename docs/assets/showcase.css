@@ -41,5 +41,5 @@ figcaption { margin-top: .5rem; color: var(--muted); }
 
 @media (min-width: 800px) {
   .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); align-items: start; }
-  .answers { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .answers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
