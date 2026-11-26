@@ -38,6 +38,8 @@
     "Can I review an existing project first?": ["references/modes.md"]
   },
   "assets": {
+    "logo": {"path": "assets/otto-s.svg"},
+    "favicon": {"path": "assets/otto-s-favicon.svg"},
     "demo": {
       "path": "assets/showcase-demo.mp4",
       "alt": "OSS Showcase guided plan and first approval in Codex CLI, Claude Code CLI, and Claude Desktop",

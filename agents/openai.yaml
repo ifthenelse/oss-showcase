@@ -1,0 +1,6 @@
+interface:
+  display_name: "OSS Showcase"
+  short_description: "Build a showcase for an open source project"
+  icon_small: "./docs/assets/otto-s-favicon.svg"
+  icon_large: "./docs/assets/otto-s.svg"
+  brand_color: "#D6FA78"
