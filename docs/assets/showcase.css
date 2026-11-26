@@ -1,11 +1,11 @@
 :root {
   color-scheme: dark;
-  --paper: #101823;
-  --ink: #eef5ff;
-  --muted: #bdcadd;
-  --panel: #192637;
-  --line: #40556c;
-  --accent: #a6d2ff;
+  --paper: #10191a;
+  --ink: #f0f6ef;
+  --muted: #b9c9c2;
+  --panel: #192626;
+  --line: #627b73;
+  --accent: #d6fa78;
 }
 
 * { box-sizing: border-box; }
@@ -31,7 +31,7 @@ p { margin-block: .75rem 0; color: var(--muted); }
 .intro { max-width: 45ch; margin-block: 1.25rem 2rem; font-size: clamp(1.15rem, 2vw, 1.35rem); color: var(--ink); }
 pre { white-space: pre-wrap; overflow-wrap: anywhere; padding: .875rem; border: 1px solid var(--line); border-radius: .5rem; background: var(--panel); }
 code { font-family: ui-monospace, monospace; font-size: .9rem; }
-.demo { align-self: start; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--line); border-radius: .8rem; background: var(--panel); }
+.demo { align-self: start; padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--line); border-top-color: var(--accent); border-radius: .8rem; background: var(--panel); }
 img, video { display: block; max-width: 100%; height: auto; border-radius: .4rem; }
 figure { margin: 1rem 0 0; }
 figcaption { margin-top: .5rem; color: var(--muted); }
