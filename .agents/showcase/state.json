@@ -10,19 +10,19 @@
     "distribution": {
       "inputs": {
         ".agents/brand-guidelines.md": "37621d09374d7b6d08482d53268768d7bc62538f1f72b86aaa79f6a8ae19cdb0",
-        ".agents/product-facts.json": "6a93b00e1332c4447d6b89b6e1930dc09af7eb3088bf9c617eaef652570a7fe2",
+        ".agents/product-facts.json": "252c9d13c983d313ccfa851fc7e02f0182ca5dba9b249c02817fd81252ebd11a",
         ".agents/product-marketing.md": "3b7d140ad3d74feafc37396ecc8e0dd35bae3a28d1f931c32105697ba307b414",
         ".agents/showcase/research.md": "c1f45c868fa9854f36483cd697ced8ed31453ce2b12af17fb0e8dafa61f32260",
         "CHANGELOG.md": "ab15163997eb22390bb8db87fb22224f0893e96d325f8116799844fe2a362a24",
         "LICENSE": null,
-        "README.md": "7c1f7429fa8d6a340a5374c2bbc7f8bad2023e4d8948df404526d8dc2d638f4e",
+        "README.md": "6016b076e82a3a1e51aa4ca3bd815f96d426778d0f53c3cd9dbb700e7b5a1770",
         "docs/assets/showcase-demo.mp4": "b874d2dbb14e5edc1c265b7da15265adf36c2b555e82c55716843f7340ec9cb0",
         "docs/assets/social.png": "9a8e98e3eb745406ecb58c29ddd95244fa33ff0bb22406d622f71cf9049f593b",
         "docs/index.html": "e809556db71fe7aaed8144e969e2bdfcf20ff4cf4218eb4ad44f33b71036c948"
       },
       "outputs": {
-        ".agents/showcase/launch/README.md": "127cb593a6731d7299022b70e197e8354bf2d62b1edd1f78fb01657ddd14bc1a",
-        ".agents/showcase/launch/product-hunt/README.md": "e291f4159f750714b15d6a4015bbc630ba452846a3ff431c05877ed4a4cf3974",
+        ".agents/showcase/launch/README.md": "509fe3aea566f197b7aa07de34f151135d1a8a9a5da76e5f6d4e671bd7352089",
+        ".agents/showcase/launch/product-hunt/README.md": "4c99d3ebd912f4b75f234b3f3252573a9c8441d44d127a6a8b2087472a175d32",
         ".agents/showcase/launch/reddit.md": "dd316621a8f08aa5bece9f69dd2e0e3cb84fbffa8e29ddab93e844cc319223b1",
         ".agents/showcase/launch/x.md": "6e1e8e0c637a50ade8372a8949f9e4eda3213ec0224e63fb87dc4b4024316d1b"
       }
@@ -35,13 +35,13 @@
         "version.txt": "1f930dd1f133c1f97a94fe3acb8db34372cf4c01ffdb2b3ff4ca72f9494121e9"
       },
       "outputs": {
-        ".agents/product-facts.json": "6a93b00e1332c4447d6b89b6e1930dc09af7eb3088bf9c617eaef652570a7fe2"
+        ".agents/product-facts.json": "252c9d13c983d313ccfa851fc7e02f0182ca5dba9b249c02817fd81252ebd11a"
       }
     },
     "presentation": {
       "inputs": {
         ".agents/brand-guidelines.md": "37621d09374d7b6d08482d53268768d7bc62538f1f72b86aaa79f6a8ae19cdb0",
-        ".agents/product-facts.json": "6a93b00e1332c4447d6b89b6e1930dc09af7eb3088bf9c617eaef652570a7fe2",
+        ".agents/product-facts.json": "252c9d13c983d313ccfa851fc7e02f0182ca5dba9b249c02817fd81252ebd11a",
         ".agents/product-marketing.md": "3b7d140ad3d74feafc37396ecc8e0dd35bae3a28d1f931c32105697ba307b414",
         ".agents/showcase/templates/index.html": "92b2244b4adfe9022514748153bb5a956e2a583ffd2ba70fd5877147a53ecccb",
         ".agents/showcase/templates/showcase.css": "ec8b7facf0e8a0095003ed169f268a1d5363ff2d6d81c970898f308c22778ee5",
@@ -53,7 +53,7 @@
         "docs/assets/social.png": "9a8e98e3eb745406ecb58c29ddd95244fa33ff0bb22406d622f71cf9049f593b"
       },
       "outputs": {
-        "README.md": "7c1f7429fa8d6a340a5374c2bbc7f8bad2023e4d8948df404526d8dc2d638f4e",
+        "README.md": "6016b076e82a3a1e51aa4ca3bd815f96d426778d0f53c3cd9dbb700e7b5a1770",
         "docs/assets/showcase.css": "ec8b7facf0e8a0095003ed169f268a1d5363ff2d6d81c970898f308c22778ee5",
         "docs/index.html": "e809556db71fe7aaed8144e969e2bdfcf20ff4cf4218eb4ad44f33b71036c948",
         "docs/sitemap.xml": "5f0ccb7c3b618db22536f958dea79cbc2c113ab0c37a5424a58a1a023771609c"
