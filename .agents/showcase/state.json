@@ -1,9 +1,9 @@
 {
   "generated": {
-    ".agents/showcase/public.json": "cee909a31cee992389c423be73cc801c04ad314f07da279b3aced3c939100554",
+    ".agents/showcase/public.json": "e9207ef2709d9764437060c5433f46076db43d22528be660b5838af7494c2aaf",
     ".agents/showcase/validate.py": "73cd12544f11f61574f12e1a1c6402fb6754feb1feebb0b36e2918361505ceb1",
-    "docs/assets/showcase.css": "00d8dbbbef81fb95722ef77cc81362e46efce8a9f09c108fd81e5960ee4cf04e",
-    "docs/index.html": "e65bea203cca00bcbe04705dd1120354414204005c8e259da58c20dc2b8ff8ac",
+    "docs/assets/showcase.css": "ec8b7facf0e8a0095003ed169f268a1d5363ff2d6d81c970898f308c22778ee5",
+    "docs/index.html": "e809556db71fe7aaed8144e969e2bdfcf20ff4cf4218eb4ad44f33b71036c948",
     "docs/sitemap.xml": "5f0ccb7c3b618db22536f958dea79cbc2c113ab0c37a5424a58a1a023771609c"
   },
   "stages": {}
