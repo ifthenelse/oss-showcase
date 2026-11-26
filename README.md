@@ -1,3 +1,5 @@
+<img src="docs/assets/oss-showcase-lockup.svg" width="520" alt="">
+
 # OSS Showcase
 
 **Turn a repository into a README, a reproducible demo, and a static project site backed by evidence from the code.**

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="656" height="120" viewBox="0 0 656 120">
+  <title>OSS Showcase</title>
+  <path fill="#10191a" d="M0 0h656v96l-24 24H0Z"/>
+  <g fill="#d6fa78" transform="translate(14 12) scale(.375)">
+    <path fill-rule="evenodd" d="M80 24h96l56 56v96l-56 56H80l-56-56V80l56-56Zm21 40-37 37v54l37 37h54l37-37v-54l-37-37h-54Z"/>
+    <path d="M113 91H165L149 107H123L112 118H146L160 132L123 169H92L108 153H116L134 135H100L86 121L113 91Z"/>
+  </g>
+  <g fill-rule="evenodd" transform="translate(126 38) scale(4.4)">
+    <path fill="#d6fa78" transform="translate(0 0)" d="M1 0H7L8 1V9L7 10H1L0 9V1Z M2 2V8H6V2Z"/>
+    <path fill="#d6fa78" transform="translate(10 0)" d="M1 0H8L6 2H2V4H7L8 5V9L7 10H0L2 8H6V6H1L0 5V1Z"/>
+    <path fill="#d6fa78" transform="translate(20 0)" d="M1 0H8L6 2H2V4H7L8 5V9L7 10H0L2 8H6V6H1L0 5V1Z"/>
+    <path fill="#f0f6ef" transform="translate(34 0)" d="M1 0H8L6 2H2V4H7L8 5V9L7 10H0L2 8H6V6H1L0 5V1Z"/>
+    <path fill="#f0f6ef" transform="translate(44 0)" d="M0 0H2V4H6V0H8V10H6V6H2V10H0Z"/>
+    <path fill="#f0f6ef" transform="translate(54 0)" d="M1 0H7L8 1V9L7 10H1L0 9V1Z M2 2V8H6V2Z"/>
+    <path fill="#f0f6ef" transform="translate(64 0)" d="M0 0H2L3 7L4 3H6L7 7L8 0H10L8 10H6L5 6L4 10H2Z"/>
+    <path fill="#f0f6ef" transform="translate(76 0)" d="M1 0H8L6 2H2V8H6L8 10H1L0 9V1Z"/>
+    <path fill="#f0f6ef" transform="translate(86 0)" d="M1 0H7L8 1V10H6V7H2V10H0V1Z M2 2V5H6V2Z"/>
+    <path fill="#f0f6ef" transform="translate(96 0)" d="M1 0H8L6 2H2V4H7L8 5V9L7 10H0L2 8H6V6H1L0 5V1Z"/>
+    <path fill="#f0f6ef" transform="translate(106 0)" d="M0 0H8L6 2H2V4H6V6H2V8H6L8 10H0Z"/>
+  </g>
+</svg>

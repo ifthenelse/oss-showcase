@@ -14,9 +14,13 @@ Use a dark default on GitHub Pages. Keep the accent for links, focus, and the de
 | Accent | `#D6FA78` | Links, focus outlines, and a single highlight |
 | Deep pine | `#20352E` | Mark and accent on light canvases |
 
-## Logo brief
+## Otto S
 
-Explore a terminal prompt opening into a frame. The frame should also read as a small display on its own. Test the symbol at 16 and 32 pixels, in one color, and on dark and light surfaces. Use the same mark for the README lockup, Pages header, favicon, and supported skill icons.
+The mark pairs an angular S with an octagonal frame. Use the lime mark on its graphite tile so it reads on light and dark backgrounds. Keep at least one frame stroke of clear space around standalone placements.
+
+- [Horizontal lockup](../docs/assets/oss-showcase-lockup.svg) for the README. Use it at 240 px wide or larger.
+- [Otto S tile](../docs/assets/otto-s.svg) for the Pages header and large Codex skill icon. Use it at 32 px or larger.
+- [Small-size cut](../docs/assets/otto-s-favicon.svg) for the favicon and small Codex skill icon. It uses the same silhouette and simplified letter spacing at 16 px.
 
 ## Art direction
 

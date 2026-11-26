@@ -15,14 +15,15 @@ if [ -e "$codex_dir" ] || [ -L "$codex_dir" ] || [ -e "$claude_dir" ] || [ -L "$
 fi
 
 cd "$source_dir"
-for directory in references scripts templates templates/profiles; do
+for directory in agents docs docs/assets references scripts templates templates/profiles; do
     if [ -L "$directory" ] || [ ! -d "$directory" ]; then
         printf 'Expected a real resource directory: %s\n' "$directory" >&2
         exit 1
     fi
 done
 
-set -- README.md references/*.md scripts/*.py scripts/install.sh scripts/verify \
+set -- README.md agents/openai.yaml docs/assets/oss-showcase-lockup.svg \
+    docs/assets/otto-s.svg docs/assets/otto-s-favicon.svg references/*.md scripts/*.py scripts/install.sh scripts/verify \
     templates/*.cjs templates/*.css templates/*.html templates/*.in templates/*.json \
     templates/*.md templates/*.tape templates/*.yml templates/profiles/*.json SKILL.md
 for file do
@@ -35,7 +36,8 @@ done
 mkdir -p "$(dirname "$codex_dir")" "$(dirname "$claude_dir")"
 mkdir "$codex_dir"
 mkdir "$codex_dir/references" "$codex_dir/scripts" "$codex_dir/templates"
-mkdir "$codex_dir/templates/profiles"
+mkdir "$codex_dir/templates/profiles" "$codex_dir/agents" "$codex_dir/docs"
+mkdir "$codex_dir/docs/assets"
 for file do
     cp "$file" "$codex_dir/$file"
 done
