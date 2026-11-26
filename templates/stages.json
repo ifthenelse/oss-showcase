@@ -17,6 +17,7 @@
     "outputs": [
       ".agents/brand-guidelines.md",
       "docs/assets/logo.svg",
+      "docs/assets/favicon.svg",
       "docs/assets/social.png"
     ]
   },
@@ -38,6 +39,7 @@
       ".agents/product-marketing.md",
       ".agents/brand-guidelines.md",
       "docs/assets/logo.svg",
+      "docs/assets/favicon.svg",
       "docs/assets/social.png",
       "docs/assets/demo.gif",
       ".agents/showcase/templates/index.html",
