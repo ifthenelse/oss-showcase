@@ -195,6 +195,34 @@ class ShowcaseTest(unittest.TestCase):
         self.write("docs/index.html", "manual page changes")
         self.assertIn("conflict docs/index.html", self.command("apply", "--keep-readme", ok=False))
 
+    def test_matching_content_does_not_grant_ownership(self):
+        self.store_facts()
+        self.command("preview", "draft")
+        readme = self.root / "README.md"
+        existing = (self.root / "draft/README.md").read_bytes()
+        readme.write_bytes(existing)
+        self.assertIn("current README.md", self.command("apply"))
+        state_path = self.root / STATE
+        state = json.loads(state_path.read_text())
+        self.assertNotIn("README.md", state["generated"])
+
+        self.facts["summary"] = "A new summary."
+        self.store_facts()
+        self.assertIn("conflict README.md", self.command("apply", ok=False))
+        self.assertEqual(readme.read_bytes(), existing)
+
+        self.command("apply", "--keep-readme")
+        self.assertIn("A new summary.", (self.root / "docs/index.html").read_text())
+
+        state = json.loads(state_path.read_text())
+        del state["ownership_version"]
+        self.write(STATE, json.dumps(state))
+        page = (self.root / "docs/index.html").read_bytes()
+        self.facts["summary"] = "Another summary."
+        self.store_facts()
+        self.assertIn("conflict docs/index.html", self.command("apply", "--keep-readme", ok=False))
+        self.assertEqual((self.root / "docs/index.html").read_bytes(), page)
+
     def test_stage_fingerprints(self):
         self.write("docs/assets/demo.gif", "first recording")
         self.write("stages.json", json.dumps({
