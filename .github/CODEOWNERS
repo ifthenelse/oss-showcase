@@ -5,5 +5,5 @@
 /lefthook.yml @ifthenelse
 /scripts/ @ifthenelse
 /templates/pages.yml @ifthenelse
-/release-please-config.json @ifthenelse
-/.release-please-manifest.json @ifthenelse
+/version.txt @ifthenelse
+/CHANGELOG.md @ifthenelse
