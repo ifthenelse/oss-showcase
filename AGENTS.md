@@ -13,7 +13,7 @@ These instructions govern changes to this repository. [SKILL.md](SKILL.md) descr
 - Add or update fixture-based tests when behavior changes. Keep checks that contact live services or change external state isolated and opt-in.
 - Edit generator sources and templates here. Regenerate sample output in temporary directories. Update the standalone validator and its tests together when the public artifact contract changes.
 - Record material architecture decisions in a numbered ADR using the [ADR template](docs/adr/0000-template.md). Follow the [ADR policy](docs/adr/0001-record-architecture-decisions.md) when superseding an accepted decision.
-- Keep each change focused. Preserve unrelated working-tree changes and use separate worktrees for concurrent tasks.
+- Start each distinct change on its own branch from current `main` and open a focused PR as part of that change. Keep unrelated work in separate branches and PRs. Preserve unrelated working-tree changes and use separate worktrees for concurrent tasks.
 
 ## Trust and authorization
 
