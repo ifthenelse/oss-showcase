@@ -52,7 +52,7 @@ The public [58-second demo](https://ifthenelse.github.io/oss-showcase/#demo) is 
 ## Publication handoff
 
 - Select the Maker role only after confirming who will submit the launch. Check the personal account, posting access, available tags, and duplicate or relaunch status in the editor.
-- The [latest tagged release](https://github.com/ifthenelse/oss-showcase/releases/tag/v0.1.0) predates the guided workflow. The copy directs readers to install from the default branch. The public repository reports no license, so leave the Open Source listing flag unset.
+- The listing points readers to the project site's quickstart. Use the [latest published release](https://github.com/ifthenelse/oss-showcase/releases/latest) for archive installs. The public repository reports no license, so leave the Open Source listing flag unset.
 - Confirm the listing preview, exact date and posting account before scheduling. The current demo covers Codex CLI, Claude Code CLI, and Claude Desktop. Codex Desktop has a pending clip.
 
 [Product Hunt listing guide](https://help.producthunt.com/en/articles/17834537-4-build-your-product-page) · [Product Hunt posting requirements](https://help.producthunt.com/en/articles/479557-how-to-post-a-product)

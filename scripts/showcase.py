@@ -46,14 +46,17 @@ def template(name, root=None):
     return (TEMPLATES / name).read_text(encoding="utf-8")
 
 
-def atomic(path, data):
+def atomic(path, data, *, create=False):
     path.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(dir=path.parent, delete=False) as handle:
         temp = Path(handle.name)
         try:
             handle.write(data)
             handle.close()
-            os.replace(temp, path)
+            if create:
+                os.link(temp, path)
+            else:
+                os.replace(temp, path)
         finally:
             temp.unlink(missing_ok=True)
 
@@ -269,11 +272,10 @@ def generate(root, args):
     ignored = set()
     if args.keep_readme:
         ignored.add("README.md")
-    if args.keep_workflow:
+    if args.keep_workflow or safe_path(root, WORKFLOW).exists():
         ignored.add(WORKFLOW)
     state = read_state(root)
-    previously = state["generated"]
-    next_state = dict(previously)
+    previously = state["generated"] if state.get("ownership_version") == 1 else {}
     changes = {}
     conflicts = []
     for name, data in outputs.items():
@@ -286,27 +288,27 @@ def generate(root, args):
             status = "current"
         elif old is None:
             status = "create"
-            changes[name] = data
+            changes[name] = (old, data)
         elif previously.get(name) == old:
             status = "update"
-            changes[name] = data
+            changes[name] = (old, data)
         else:
             status = "conflict"
             conflicts.append(name)
         print(f"{status} {name}")
-        next_state[name] = new
-    for name in sorted(previously.keys() - outputs.keys()):
+    for name in sorted(state["generated"].keys() - outputs.keys()):
         print(f"retained outside generated output: {name}")
     if conflicts:
-        raise ValueError("Reconcile differing existing files before applying. No generated files changed.")
-    if args.command == "apply":
-        for name, data in changes.items():
-            atomic(safe_path(root, name), data)
+        raise ValueError("Preview changes separately or keep the existing files. No generated files changed.")
+    if args.command == "apply" and changes:
+        state.update(ownership_version=1, generated=previously)
+        for name, (old, data) in changes.items():
+            if file_digest(root, name) != old:
+                raise ValueError(f"File changed during apply: {name}")
+            atomic(safe_path(root, name), data, create=old is None)
             # Preserve the baseline after each completed write for safe retries.
             previously[name] = sha(data)
             write_state(root, state)
-        state["generated"] = next_state
-        write_state(root, state)
 
 
 def main():

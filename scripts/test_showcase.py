@@ -165,13 +165,17 @@ class ShowcaseTest(unittest.TestCase):
         self.assertFalse((self.root / "preview/internal-notes.txt").exists())
         self.assertTrue((self.root / "preview/assets/logo.svg").is_file())
         self.assertTrue((self.root / "preview/assets/favicon.svg").is_file())
+        workflow = self.root / WORKFLOW
+        existing_workflow = workflow.read_bytes()
         self.facts.update(site_url="https://tool.example.org/", llms_txt=False)
         self.store_facts()
         self.command("apply")
         self.validate("--stage", "custom")
         self.assertTrue((self.root / "custom/robots.txt").exists())
         self.assertFalse((self.root / "custom/llms.txt").exists())
-        self.assertIn("https://tool.example.org/", (self.root / WORKFLOW).read_text())
+        self.assertEqual(workflow.read_bytes(), existing_workflow)
+        self.command("preview", "candidate")
+        self.assertIn("https://tool.example.org/", (self.root / "candidate" / WORKFLOW).read_text())
         self.write("docs/assets/demo.gif", "changed after review")
         self.assertIn("differs from reviewed manifest", self.validate(ok=False))
 
@@ -184,10 +188,40 @@ class ShowcaseTest(unittest.TestCase):
         self.assertFalse((self.root / STATE).exists())
         self.command("preview", "draft")
         self.assertTrue((self.root / "draft/README.md").exists())
-        self.command("apply", "--keep-readme")
+        self.write(WORKFLOW, "Manual deployment workflow")
+        self.assertIn(f"keep {WORKFLOW}", self.command("apply", "--keep-readme"))
+        self.assertEqual((self.root / WORKFLOW).read_text(), "Manual deployment workflow")
         self.assertEqual((self.root / "README.md").read_text(), "Manual documentation")
         self.write("docs/index.html", "manual page changes")
         self.assertIn("conflict docs/index.html", self.command("apply", "--keep-readme", ok=False))
+
+    def test_matching_content_does_not_grant_ownership(self):
+        self.store_facts()
+        self.command("preview", "draft")
+        readme = self.root / "README.md"
+        existing = (self.root / "draft/README.md").read_bytes()
+        readme.write_bytes(existing)
+        self.assertIn("current README.md", self.command("apply"))
+        state_path = self.root / STATE
+        state = json.loads(state_path.read_text())
+        self.assertNotIn("README.md", state["generated"])
+
+        self.facts["summary"] = "A new summary."
+        self.store_facts()
+        self.assertIn("conflict README.md", self.command("apply", ok=False))
+        self.assertEqual(readme.read_bytes(), existing)
+
+        self.command("apply", "--keep-readme")
+        self.assertIn("A new summary.", (self.root / "docs/index.html").read_text())
+
+        state = json.loads(state_path.read_text())
+        del state["ownership_version"]
+        self.write(STATE, json.dumps(state))
+        page = (self.root / "docs/index.html").read_bytes()
+        self.facts["summary"] = "Another summary."
+        self.store_facts()
+        self.assertIn("conflict docs/index.html", self.command("apply", "--keep-readme", ok=False))
+        self.assertEqual((self.root / "docs/index.html").read_bytes(), page)
 
     def test_stage_fingerprints(self):
         self.write("docs/assets/demo.gif", "first recording")

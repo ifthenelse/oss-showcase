@@ -6,7 +6,6 @@
   "repo_url": "https://github.com/ifthenelse/oss-showcase",
   "site_url": "https://ifthenelse.github.io/oss-showcase/",
   "lang": "en",
-  "release": "v0.1.0",
   "labels": {
     "quickstart": "Install OSS Showcase",
     "demo": "Watch the guided walkthrough"
