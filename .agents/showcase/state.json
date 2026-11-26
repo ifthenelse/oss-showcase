@@ -1,8 +1,8 @@
 {
   "generated": {
-    ".agents/showcase/public.json": "1f3f441b08b931ea39e99b60b046690f1d9ffb8057959da41677cdbefe5fef97",
+    ".agents/showcase/public.json": "17a75eb1eda813838a4e1626cb909ddce098ae9b65176249e3e5943fd71259e4",
     ".agents/showcase/validate.py": "73cd12544f11f61574f12e1a1c6402fb6754feb1feebb0b36e2918361505ceb1",
-    "docs/assets/showcase.css": "360e3b5b1e0cc88181026c62517d1f014bf9d7f9f549c7e609c4313481d9e75a",
+    "docs/assets/showcase.css": "469e05a711483cf87de84b3a4e7a741396a44500aedef2e9f09505de34de662a",
     "docs/index.html": "ac7add3d6b1e81e76b806dc36addec139b6119c73ec60caf6db0a6d40965caf2",
     "docs/sitemap.xml": "5f0ccb7c3b618db22536f958dea79cbc2c113ab0c37a5424a58a1a023771609c"
   },
