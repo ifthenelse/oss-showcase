@@ -1,17 +1,25 @@
-# Launch drafts
+# Launch plan and drafts
 
-## Readiness and release reference
+## Research and readiness
 
-## Channel calendar
+Link the dated research memo, evidence-backed hook, target ref, release, live or staged landing review, quickstart and demo. List unverified or blocked items and the action that would resolve them.
 
-| Date and timezone | Channel | Intended reader | Draft path | Status |
+## Channel choices
+
+| Channel and destination | Audience and why it fits | Rules, eligibility and source | Draft and proof asset | Status |
 | --- | --- | --- | --- | --- |
 
-## Directory shortlist
+## Calendar
 
-| Directory | Eligibility and source | Required assets | Destination | Status |
+| Proposed date, time and timezone | Destination and action | Owner or availability | Readiness and approval | Status |
 | --- | --- | --- | --- | --- |
 
-## Platform drafts and derivative media
+Schedule landing QA and deployment before launch traffic. Include a review window and a follow-up based on real feedback.
 
-## Measurement plan
+## Channel drafts
+
+Link the exact copy and media for each channel. Include required fields, affiliation or flair, and any venue-specific format checks.
+
+## Measurement
+
+Record approved publication URLs and the baseline, results, or unknown status for each chosen measure.

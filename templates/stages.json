@@ -10,9 +10,18 @@
       ".agents/product-marketing.md"
     ]
   },
+  "market": {
+    "inputs": [
+      ".agents/product-facts.json"
+    ],
+    "outputs": [
+      ".agents/showcase/research.md"
+    ]
+  },
   "brand": {
     "inputs": [
-      ".agents/product-marketing.md"
+      ".agents/product-marketing.md",
+      ".agents/showcase/research.md"
     ],
     "outputs": [
       ".agents/brand-guidelines.md",
@@ -87,7 +96,9 @@
     "inputs": [
       ".agents/product-facts.json",
       ".agents/product-marketing.md",
+      ".agents/showcase/research.md",
       ".agents/brand-guidelines.md",
+      "docs/index.html",
       "docs/assets/demo.gif",
       "docs/assets/social.png",
       "CHANGELOG.md"
