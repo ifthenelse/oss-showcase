@@ -2,6 +2,11 @@
 
 These instructions govern changes to this repository. [SKILL.md](SKILL.md) describes how to run the installed skill against another project. Use [CONTRIBUTING.md](CONTRIBUTING.md) for the development and review workflow, [architecture](docs/architecture.md) for component boundaries and the [threat model](docs/security/threat-model.md) for security risks. Write repository documentation and PR descriptions in English.
 
+## Version and commits
+
+- Assess each change against the latest published OSS Showcase release. Update `version.txt` and `CHANGELOG.md` together for the appropriate [SemVer 2.0.0](https://semver.org/) bump. See [release operations](docs/deployment.md) for the manual workflow.
+- Use [Conventional Commits 1.0.0](https://www.conventionalcommits.org/en/v1.0.0/) for every commit and squash-merge PR title. Follow the [commit and review rules](CONTRIBUTING.md#commits-and-review).
+
 ## Work and verify
 
 - Use Python 3.12 and the standard library for the generator, validator and tests. Node.js helpers are used on demand for recording and social assets.

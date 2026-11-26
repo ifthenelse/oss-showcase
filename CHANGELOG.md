@@ -4,6 +4,7 @@
 
 - Keep existing project files and workflows read-only across all showcase modes. The generator updates a file only when its ledger confirms a prior write and the file still matches that write.
 - Point evergreen installation and launch guidance to the latest GitHub release.
+- Match showcase copy to the target project's documentation language by default and honor explicit language overrides.
 - Explain how to proceed when a manual release would reuse a tag that belongs to a different commit.
 
 ## 0.2.0 (2026-11-26)
