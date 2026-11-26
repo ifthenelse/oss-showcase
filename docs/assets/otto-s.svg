@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>OSS Showcase Otto S</title>
+  <path fill="#10191a" d="M24 0h208l24 24v208l-24 24H24L0 232V24Z"/>
+  <path fill="#d6fa78" fill-rule="evenodd" d="M80 24h96l56 56v96l-56 56H80l-56-56V80l56-56Zm21 40-37 37v54l37 37h54l37-37v-54l-37-37h-54Z"/>
+  <path fill="#d6fa78" d="M113 91H165L149 107H123L112 118H146L160 132L123 169H92L108 153H116L134 135H100L86 121L113 91Z"/>
+</svg>

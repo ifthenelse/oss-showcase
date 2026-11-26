@@ -40,8 +40,16 @@ class InstallerTest(unittest.TestCase):
             home = root / "home"
             source.mkdir()
             home.mkdir()
-            for name in ("README.md", "SKILL.md"):
-                shutil.copyfile(PACKAGE / name, source / name)
+            brand_files = (
+                "agents/openai.yaml",
+                "docs/assets/oss-showcase-lockup.svg",
+                "docs/assets/otto-s.svg",
+                "docs/assets/otto-s-favicon.svg",
+            )
+            for name in ("README.md", "SKILL.md", *brand_files):
+                destination = source / name
+                destination.parent.mkdir(exist_ok=True, parents=True)
+                shutil.copyfile(PACKAGE / name, destination)
             for name in ("references", "scripts", "templates"):
                 shutil.copytree(PACKAGE / name, source / name)
             (source / ".git").mkdir()
@@ -63,6 +71,8 @@ class InstallerTest(unittest.TestCase):
             subprocess.run(command, env=env, check=True, capture_output=True)
             subprocess.run(command, env=env, check=True, capture_output=True)
             self.assertEqual((home / ".claude/skills/oss-showcase").resolve(), installed.resolve())
+            for name in brand_files:
+                self.assertEqual((installed / name).read_bytes(), (PACKAGE / name).read_bytes())
             self.assertTrue((installed / "references/publishing.md").is_file())
             self.assertTrue((installed / "templates/profiles/skill.json").is_file())
             for name in (".git", ".env", "templates/.env.local"):
@@ -129,9 +139,13 @@ class ShowcaseTest(unittest.TestCase):
     def test_project_path_root_domain_and_artifact_scope(self):
         self.write("docs/assets/demo.gif", "fixture media bytes")
         self.write("docs/assets/social.png", "fixture card bytes")
+        self.write("docs/assets/logo.svg", "<svg/>")
+        self.write("docs/assets/favicon.svg", "<svg/>")
         self.write("docs/internal-notes.txt", "internal test fixture")
         self.facts.update({
             "assets": {
+                "logo": {"path": "assets/logo.svg"},
+                "favicon": {"path": "assets/favicon.svg"},
                 "demo": {"path": "assets/demo.gif", "alt": "Fixture", "caption": "The sample prints."},
                 "social": {"path": "assets/social.png", "alt": "Sample project"},
             },
@@ -142,11 +156,15 @@ class ShowcaseTest(unittest.TestCase):
         self.command("apply")
         page = (self.root / "docs/index.html").read_text()
         self.assertIn('href="assets/demo.gif"', page)
+        self.assertIn('<img class="logo" src="assets/logo.svg" alt="">', page)
+        self.assertIn('<link rel="icon" href="assets/favicon.svg">', page)
         self.assertIn('https://sample.github.io/tool/assets/social.png', page)
         self.assertIn('docs/assets/demo.gif', (self.root / "README.md").read_text())
         self.assertFalse((self.root / "docs/robots.txt").exists())
         self.validate("--stage", "preview")
         self.assertFalse((self.root / "preview/internal-notes.txt").exists())
+        self.assertTrue((self.root / "preview/assets/logo.svg").is_file())
+        self.assertTrue((self.root / "preview/assets/favicon.svg").is_file())
         self.facts.update(site_url="https://tool.example.org/", llms_txt=False)
         self.store_facts()
         self.command("apply")
