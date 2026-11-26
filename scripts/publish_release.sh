@@ -34,6 +34,7 @@ if [[ -z "$tag_commit" ]]; then
   gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" -f "ref=$ref" -f "sha=$GITHUB_SHA" >/dev/null
 elif [[ "$tag_commit" != "$GITHUB_SHA" ]]; then
   echo "$tag already points to a different commit ($tag_commit)." >&2
+  echo "For a new release, merge the next version in version.txt and CHANGELOG.md, then start a new Release run from main." >&2
   exit 1
 fi
 
