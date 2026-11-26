@@ -9,9 +9,33 @@ Record service, needed capability, expected and verified target, authentication 
 ## Guided workflow
 
 1. Resolve the target folder or repository, ref or release, existing assets and `docs/HANDOFF.md`. Inspect read-only and present an ordered plan before acting, starting with the first step that needs work. Propose [branding and art direction](branding.md) first, followed by the README glow-up, a real fixture-based demo, the project page, SEO and AEO, quality checks and GitHub Pages publication. Include separate draft and publication steps for Product Hunt, X and Reddit. Mark existing verified results as reusable and identify dependencies, unavailable tools and any release, license or account blockers. List planned file changes and public destinations. If only a remote repository is provided, keep the ledger in its local working copy or clone.
-2. At the start of each ready step, state the change, destination and any external effect. Offer **Proceed**, **Proceed with this and remaining steps**, **Skip** and **Pause**. Wait for the reply unless the step is already covered by current approval. **Proceed** authorizes one step. **Proceed with this and remaining steps**, or an equivalent request to run the shown plan autonomously, authorizes its remaining eligible steps within the stated scope. Continue those steps in order without repeating the prompt. On Skip or an explicit refusal, record the step as skipped and move to the next ready step. Leave unanswered steps pending. If a prerequisite was skipped or failed, record the dependent step as blocked and continue to the next independent step. Respect a pause or change of scope and hand off any remainder when no ready step remains.
-3. Apply the [publication rules](#publication) to deployments, public posts and submissions. After a separate decision, continue the other steps covered by autonomous approval.
-4. Record the plan and the first decision before starting a confirmed operation. Update the ledger after each attempt, including skips and blockers. Mark a step complete only after its checks pass. At the next session, read the ledger first and recheck drift. Reuse verified completed work and any applicable user authorization that can be verified from the conversation. Ask before executing a pending step without such authorization or reopening a skipped step.
+2. Create the [session task list](#session-tasks) from the ordered plan before the first decision. Record the plan and first decision in the handoff before starting a confirmed operation.
+3. At the start of each ready step, ask [for a decision](#step-decisions) unless it is covered by the current approval. For external writes, use the separate [publication rules](#publication). Resume any still-authorized local steps after the external decision.
+4. Update the task list and handoff after each attempt. Mark a step done only after its checks pass. If a prerequisite was skipped or failed, record the dependent step as blocked and continue with the next independent step. On resume, read the handoff first, check for drift, and reuse verified results. Ask before reopening a skipped step.
+
+### Session tasks
+
+Create one task per plan step in order, with a stable title and clear next action. Give each channel draft and publication its own task. Reuse the session's existing task IDs when updating a plan. Keep an awaiting-approval task pending. Mark it in progress when execution starts, then record the verified outcome. If the client has no skipped or blocked state, label the task accordingly and leave it unchecked. Use `docs/HANDOFF.md` to reconstruct the list across sessions.
+
+| Client | Interactive question | Session tasks |
+| --- | --- | --- |
+| Codex | Use `request_user_input` or the host's equivalent choice control when the active mode exposes it and permits the question. | Use `update_plan` when available in the active mode. [Codex tool behavior](https://github.com/openai/codex/blob/main/codex-rs/collaboration-mode-templates/templates/plan.md) |
+| Claude Code | Use `AskUserQuestion` when available. | Use `TaskCreate`, `TaskList` and `TaskUpdate`, or `TodoWrite` when that is the exposed tracker. [Claude Code tools](https://code.claude.com/docs/en/tools-reference) |
+| GitHub Copilot | In VS Code use `vscode/askQuestions`. In interactive CLI sessions use the exposed `ask_user` tool if it accepts choices. | Use the client task list when exposed, such as `#todos` in VS Code. [VS Code tools](https://code.visualstudio.com/docs/agents/reference/tools-reference) · [Copilot CLI tools](https://docs.github.com/en/copilot/reference/hooks-reference#tool-names-for-hook-matching) |
+
+Check the tools in the current session. Use a Markdown checklist in chat when the client lacks a task tracker. Use one concise text question if the client lacks a choice control or limits its use. In a noninteractive session, keep unanswered steps pending and return the handoff.
+
+### Step decisions
+
+Ask **Proceed with <step>?** Show what will change and where. Use the client's native single-choice prompt with these labels, localized to the user's language:
+
+| Choice | Effect |
+| --- | --- |
+| **Accept once** | Run this step only. Ask again at the next uncovered step. |
+| **Always accept** | Run this step and the remaining eligible local steps already shown in this run. End this scope when the run ends or the plan materially changes. |
+| **Cancel** | Skip this step and ask about the next ready step. |
+
+Wait for an explicit selection or an unambiguous user instruction. Dismissing the prompt, a timeout or no answer leaves the step pending. An explicit request to pause stops the run with unfinished tasks pending. These are workflow choices. Any tool or sandbox permission prompt follows the host's own rules. Do not change permission mode or trigger an unnecessary tool call to obtain a dialog.
 
 ## Handoff
 
@@ -21,6 +45,6 @@ When pausing, ending or transferring unfinished work, explicitly use `mattpocock
 
 ## Publication
 
-Build and plain launch produce local artifacts. Audit is read-only. Require explicit authorization for commits, pushes, pull requests, submissions, deployments and external settings changes. For each external write, show the exact account, destination, final payload or artifact and settings that will change. Confirm the operation once all details are known. An autonomous approval covers an external write only if those details were shown and explicitly included. Use the host's required approval flow when applicable.
+Build and plain launch produce local artifacts. Audit is read-only. Require explicit authorization for commits, pushes, pull requests, submissions, deployments and external settings changes. For each external write, show the exact account, destination, final payload or artifact and settings that will change. Confirm the operation once all details are known. Ask for **Accept once** or **Cancel** after showing those details, using the native choice control where allowed. **Always accept** is limited to local steps. Use the host's required approval flow when applicable.
 
 Compare the ref, files or artifact hashes and destination with the approved plan. Ask again for any material change. After an uncertain outcome, verify remote state before retrying. Record verified URLs, job IDs and submission status so a later run can reuse completed work. Follow the relevant [Pages](publishing.md#publish-to-github-pages) or [channel](distribution.md#publish-approved-channel-material) procedure.

@@ -16,7 +16,7 @@ npx skills add ifthenelse/oss-showcase --skill oss-showcase
 
 Select an agent such as Codex, Claude Code, or GitHub Copilot. Open an agent session in the target project and invoke `$oss-showcase` in Codex or `/oss-showcase` in Claude Code. In other hosts, ask the agent to use OSS Showcase for the current project. For a monorepo, specify the package. Include your site URL if you know it.
 
-The first result is an ordered plan. Choose **Proceed** for one step, **Proceed with this and remaining steps** for scoped autonomy, or **Skip** or **Pause**. The skill records outstanding work in the target project's `docs/HANDOFF.md`. See the [guided workflow](references/execution.md#guided-workflow).
+The skill shows the ordered plan in the client's task list when available. Before each uncovered step, it offers **Accept once**, **Always accept** for the remaining planned local steps, or **Cancel** to skip the step. Publication has its own confirmation. The skill records outstanding tasks in the target project's `docs/HANDOFF.md`. See the [guided workflow](references/execution.md#guided-workflow).
 
 For the packaged release, download and unpack the source archive from the release page and run `sh scripts/install.sh`. The installer copies skill files to `~/.agents/skills/oss-showcase/` and creates a Claude Code link. Install from the default branch to use the guided workflow. The first tagged release predates it.
 
