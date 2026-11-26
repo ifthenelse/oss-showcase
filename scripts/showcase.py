@@ -269,7 +269,7 @@ def generate(root, args):
     ignored = set()
     if args.keep_readme:
         ignored.add("README.md")
-    if args.keep_workflow:
+    if args.keep_workflow or safe_path(root, WORKFLOW).exists():
         ignored.add(WORKFLOW)
     state = read_state(root)
     previously = state["generated"]
