@@ -19,6 +19,10 @@ After successful verification on `main`, Release Please can propose a release PR
 
 Open a normal release PR with the changelog, version and manifest updated together. Wait for the required check and squash merge it. Create the GitHub Release and matching tag at the verified merge commit, then verify the archive as above. The first release, `v0.1.0`, followed this path.
 
-Pages deployments for target projects follow [Pages publication](../references/publishing.md#publish-to-github-pages).
+## Publish a target project's showcase
+
+Review the target landing's [copy and discovery checks](../references/publishing.md#discovery), then stage the exact Pages artifact. Confirm the deployment, verify the live URL and assets, and use that verified page in the [launch calendar](../references/distribution.md). Confirm each channel submission separately.
+
+See the [Pages publication procedure](../references/publishing.md#publish-to-github-pages) for target project settings and verification.
 
 [Release Please setup](https://github.com/googleapis/release-please-action#workflow-permissions) · [GitHub workflow approval for automated PRs](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow#triggering-a-workflow-from-a-workflow)
