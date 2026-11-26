@@ -13,15 +13,19 @@ Use HTTPS and one trailing slash for the homepage canonical. Keep the sitemap un
 
 ## Discovery
 
-Use indexable HTML, visible descriptive copy, stable internal links, title and description, canonical, sitemap, and meaningful alt text. Open Graph and card fields are sharing metadata. Produce a branded raster social preview (1280 × 640 is a useful GitHub-oriented starting size), verify legibility at small preview sizes, and store it in `docs/assets/`. If using a project logo, keep the approved version and render the card with a script or source file outside the public directory. Keep GitHub About/topics and social preview changes as drafts or instructions until authorized to apply them externally.
+Use the supported search and answer intents from the [market memo](research.md). Review the existing public URL when reachable, then check the staged candidate before channel selection. Use **copy-editing** for existing prose or **copywriting** for new copy. Lead with the user task, a verified result, and an install path.
 
-Use factual JSON-LD only if the type fits. Markup validity and rich-result eligibility are different checks. Answer-oriented copy should state what the tool does, who can use it, prerequisites, reproducible usage and observed output in visible HTML. Only add FAQ content when it answers a real question. Set `llms_txt` only as an opt-in experiment or requested documentation index. Neither schema nor an `llms.txt` file guarantees visibility or AI citations.
+- **SEO.** Check HTTPS, crawl directives, canonical, title and description, sitemap, headings, links and alt text. Keep title, description and social metadata consistent. Use a reviewed preview image, typically 1280 × 640, under `docs/assets/`. Check it at small sizes. Apply GitHub About, topics and social preview settings only after approval.
+- **AEO and GEO.** Answer real questions in visible HTML. Name the product, who it helps, prerequisites, the exact command and an observed result. Link to source, tests or the demo for consequential claims. Use JSON-LD only when its type fits and its facts match the visible page. Treat `llms_txt` as opt-in.
+- **Verification.** Record the ref, checked URLs, fixes and any unmeasured indexing or AI citations. Separate local checks from live crawl or citation data. Recheck the deployed site and use Search Console or Bing Webmaster Tools when verified access is available. Page readiness can be checked before launch without promising placement or citations.
+
+[Google AI Search guidance](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide) · [Bing AI Performance](https://blogs.bing.com/webmaster/2026/2/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview/)
 
 ## Draft deployment
 
 The workflow is manual dispatch from the default branch, passes only the explicit allowlist to the Pages upload action, and compares Pages configuration with the rendered canonical at release time. It uses pinned action versions, has no LLM call, and scopes write permissions to the deploy job. Verify a fresh local build with `python3 .agents/showcase/validate.py --stage <new-directory>`. Review the artifact before authorizing deployment. Excluded files in `docs/` stay excluded even when present in Git. To use the workflow after approval, Pages must use GitHub Actions as the source. If the project already publishes Pages, follow its existing deployment path.
 
-[GitHub Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) · [Pages publishing source and custom domains](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) · [Google Search guidance for generative features](https://developers.google.com/search/docs/fundamentals/ai-optimization-guide)
+[GitHub Pages workflow](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) · [Pages publishing source and custom domains](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
 
 ## Publish to GitHub Pages
 

@@ -18,15 +18,23 @@ npx skills add ifthenelse/oss-showcase --skill oss-showcase
 
 Select an agent such as Codex, Claude Code, or GitHub Copilot. Open an agent session in the target project and invoke `$oss-showcase` in Codex or `/oss-showcase` in Claude Code. In other hosts, ask the agent to use OSS Showcase for the current project. For a monorepo, specify the package. Include your site URL if you know it.
 
-The skill shows the ordered plan in the client's task list when available. Before each uncovered step, it offers **Accept once**, **Always accept** for the remaining planned local steps, or **Cancel** to skip the step. Publication has its own confirmation. The skill records outstanding tasks in the target project's `docs/HANDOFF.md`. See the [guided workflow](references/execution.md#guided-workflow).
-
 For the packaged release, download and unpack the source archive from the release page and run `sh scripts/install.sh`. The installer copies skill files to `~/.agents/skills/oss-showcase/` and creates a Claude Code link. Install from the default branch to use the guided workflow. The first tagged release predates it.
+
+## Guided showcase workflow
+
+1. [Discover the market](references/research.md). Identify the audience, compare alternatives, and use dated evidence to choose a message the project can demonstrate.
+2. [Plan the brand](references/branding.md), update the README, and record a real run of the project on a safe fixture.
+3. Build or update the project page. [Review copy, SEO, GEO, and AEO](references/publishing.md#discovery) against the verified quickstart and demo.
+4. [Plan distribution](references/distribution.md). Pick where to post, what to show, and when to launch. Put site verification and deployment before sending traffic.
+5. Review each proposed deployment or post before it goes live.
+
+The plan appears in the client's task list when available. Before each uncovered local step, **Accept once** runs that step, **Always accept** covers the remaining planned local steps, and **Cancel** skips the step. Outstanding work goes in the target project's `docs/HANDOFF.md`. See [execution and approvals](references/execution.md#guided-workflow).
 
 ## Demo
 
 [![Watch OSS Showcase in Codex and Claude Code](docs/assets/showcase-demo-poster.png)](docs/assets/showcase-demo.mp4)
 
-The recording shows Codex CLI, Claude Code CLI, and Claude Code in the Claude desktop app using the skill on the same synthetic Task Counter project. Each run proposes a showcase plan and pauses at the first decision. You can approve the current step, approve the remaining eligible steps, skip, or pause. Public publishing has its own approval.
+The recording shows Codex CLI, Claude Code CLI, and Claude Code in the Claude desktop app using the skill on the same synthetic Task Counter project. Each run proposes a showcase plan and pauses at the first decision.
 
 [Reproduce the guided walkthrough](.agents/showcase/demo/README.md).
 
@@ -35,8 +43,9 @@ The recording shows Codex CLI, Claude Code CLI, and Claude Code in the Claude de
 | Goal | Start here |
 | --- | --- |
 | Review an existing README or site before editing | Run `oss-showcase audit` for a read-only review. |
-| Build or refresh the public presentation | Use the guided plan or the [generation workflow](references/state.md) for the README, demo, project page and discovery checks. |
-| Prepare a launch | Run `oss-showcase launch` for draft posts and a channel plan. See [launch distribution](references/distribution.md). |
+| Validate the audience and positioning | Run `oss-showcase research`. See [market discovery](references/research.md). |
+| Build or refresh the public presentation | Use the guided plan or the [generation workflow](references/state.md). |
+| Prepare a launch | Run `oss-showcase launch` for a [channel plan, calendar, and draft posts](references/distribution.md). |
 | Publish a reviewed site | Use `oss-showcase publish` with an approved target and follow the [GitHub Pages procedure](references/publishing.md#publish-to-github-pages). |
 
 See [optional integrations](references/integrations.md) for the connected tools available to each stage.

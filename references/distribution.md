@@ -2,15 +2,12 @@
 
 For apps and CLIs, run [package distribution](packages.md) in parallel with preparation after the release is verified.
 
-Use stage 10 in [stage routing](stages.md) and the relevant read capabilities in [integrations](integrations.md). Start from `templates/launch.md`. Resolve the release and demo first. Date drafts in the launch timezone, confirm platform and community policies from primary sources, and label proposed dates as tentative.
+Use stage 10 in [stage routing](stages.md) and start from `templates/launch.md`. Draft the calendar after [market discovery](research.md) and the [landing copy and discovery review](publishing.md#discovery). Verify the release, public link, quickstart and demo. If a check is incomplete, name the gap and keep dependent dates tentative. Put website QA and approved deployment before sending traffic.
 
-| Timing | Work |
-| --- | --- |
-| Before launch | Verify public quickstart, visible limitations, primary landing URL, release assets and demo. Research relevant examples and communities. Prepare a claim bank that pairs each proposed hook with a source path, test or demonstrated result. |
-| Launch day | Prepare Product Hunt tagline, gallery and maker comment. Prepare a Show HN title and first comment centered on the technical problem and something readers can try. Write an X post with the real demo and one result. Draft Reddit posts per community with disclosure of the author's relationship and a useful technical explanation. Stagger only where rules, audience and maintainer availability support it. |
-| Follow-up | Prepare responses to likely questions and a second post using verified feedback or a new example. Record actual reach, referral visits and repository activity if available. Keep submissions and responses as drafts in `launch` mode. |
-
-Select additional destinations by fit, such as GitHub Releases, DEV, Lobsters, package registries, MCP directories and language or framework communities. Check eligibility and rules per channel. Use one supported promise, real example and intended reader for each draft. Use campaign links only when allowed and keep tracking parameters out of the site canonical. Keep the tracker in draft status and omit unsupported claims, engagement promises and solicitation of votes.
+1. **Where.** Choose channels from audience evidence, launch objective and readiness. Evaluate Product Hunt, X and relevant Reddit communities first. Check current first-party platform and community rules, eligibility, account access where available, and any prior listing. Record why a channel fits or is deferred. Consider other channels only when they suit the project.
+2. **What.** Use one verifiable hook per channel and reuse the underlying proof. Prepare Product Hunt listing copy, gallery and maker comment. Draft an X post with a real demo or observed result. Write a Reddit post for a specific community with affiliation disclosed and one useful technical question. Use the intended language and voice. For an English launch, use plain, direct English, short sentences, and occasional emoji where they fit the channel. Put the observed behavior before the pitch. Avoid unsupported claims, forced slang and vote solicitation.
+3. **When.** Record the date, time, timezone, destination, payload link, audience, reason for the slot, and readiness gate. Check platform scheduling windows and convert the timezone where needed. Include time for replies and a follow-up using an actual fix, result or useful answer. Mark proposed dates as tentative and keep channel drafts separate from scheduling or publishing.
+4. **Measure.** Record the permalink after publication. Review actionable feedback and reported first runs. Use referral visits, clicks, repository activity or AI visibility when measured, and label missing data. Use campaign links only when the channel permits them and keep tracking parameters out of the canonical.
 
 ## Publish approved channel material
 
