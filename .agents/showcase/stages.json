@@ -1,0 +1,54 @@
+{
+  "facts": {
+    "inputs": [
+      "version.txt",
+      "CHANGELOG.md",
+      "SKILL.md",
+      "scripts/install.sh"
+    ],
+    "outputs": [
+      ".agents/product-facts.json"
+    ]
+  },
+  "presentation": {
+    "inputs": [
+      ".agents/product-facts.json",
+      ".agents/product-marketing.md",
+      ".agents/brand-guidelines.md",
+      ".agents/showcase/templates/index.html",
+      ".agents/showcase/templates/showcase.css",
+      "docs/assets/oss-showcase-lockup.svg",
+      "docs/assets/otto-s.svg",
+      "docs/assets/otto-s-favicon.svg",
+      "docs/assets/showcase-demo.mp4",
+      "docs/assets/showcase-demo-poster.png",
+      "docs/assets/social.png"
+    ],
+    "outputs": [
+      "README.md",
+      "docs/index.html",
+      "docs/sitemap.xml",
+      "docs/assets/showcase.css"
+    ]
+  },
+  "distribution": {
+    "inputs": [
+      ".agents/product-facts.json",
+      ".agents/product-marketing.md",
+      ".agents/showcase/research.md",
+      ".agents/brand-guidelines.md",
+      "README.md",
+      "docs/index.html",
+      "docs/assets/showcase-demo.mp4",
+      "docs/assets/social.png",
+      "CHANGELOG.md",
+      "LICENSE"
+    ],
+    "outputs": [
+      ".agents/showcase/launch/README.md",
+      ".agents/showcase/launch/product-hunt/README.md",
+      ".agents/showcase/launch/reddit.md",
+      ".agents/showcase/launch/x.md"
+    ]
+  }
+}
