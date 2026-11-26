@@ -2,54 +2,66 @@
 
 # OSS Showcase
 
-**Turn a repository into a README, a reproducible demo, and a static project site backed by evidence from the code.**
+**Your code runs. Give people a quickstart, a demo, and a project site they can trust.**
 
-OSS Showcase is an Agent Skill for maintainers who want installation instructions, examples, and release materials to tell the same story. It starts with a plan you can review and uses a deterministic generator and validator for the static site.
+OSS Showcase is an Agent Skill for maintainers with a working GitHub project. It reads the repo, checks claims against code and tests, and proposes a plan you can review before it changes files.
 
-[Project site](https://ifthenelse.github.io/oss-showcase/) · [Latest release](https://github.com/ifthenelse/oss-showcase/releases/latest) · [Operating modes](references/modes.md)
+[Quickstart](#quickstart) · [Watch the demo](#demo) · [Project site](https://ifthenelse.github.io/oss-showcase/) · [Latest release](https://github.com/ifthenelse/oss-showcase/releases/latest)
 
 ## Quickstart
 
-From the folder of a project you want to showcase, run:
+From the project you want to showcase, with Node.js and npm available, run:
 
 ```sh
 npx skills add ifthenelse/oss-showcase --skill oss-showcase
 ```
 
-Select an agent such as Codex, Claude Code, or GitHub Copilot. Open an agent session in the target project and invoke `$oss-showcase` in Codex or `/oss-showcase` in Claude Code. In other hosts, ask the agent to use OSS Showcase for the current project. For a monorepo, specify the package. Include your site URL if you know it.
+Choose your agent, then open a session in that project. In Codex, invoke `$oss-showcase`. In Claude Code, select `/oss-showcase`. In GitHub Copilot and other compatible hosts, ask the agent to use OSS Showcase on the current project. For a monorepo, specify the package. Include the public site URL if you know it.
 
-For the packaged release, download and unpack the source archive from the latest release linked above and run `sh scripts/install.sh`. The installer copies skill files to `~/.agents/skills/oss-showcase/` and creates a Claude Code link.
+**What you should see:** an ordered plan for your repository and a prompt to review the first pending step.
 
-## Guided showcase workflow
+To install from a source archive, download and unpack the [latest release](https://github.com/ifthenelse/oss-showcase/releases/latest), then run this from the extracted directory:
 
-1. [Discover the market](references/research.md). Identify the audience, compare alternatives, and use dated evidence to choose a message the project can demonstrate.
-2. [Plan the brand](references/branding.md), update the README, and record a real run of the project on a safe fixture.
-3. Build or update the project page. [Review copy, SEO, GEO, and AEO](references/publishing.md#discovery) against the verified quickstart and demo.
-4. [Plan distribution](references/distribution.md). Pick where to post, what to show, and when to launch. Put site verification and deployment before sending traffic.
-5. Review each proposed deployment or post before it goes live.
+```sh
+sh scripts/install.sh
+```
 
-The plan appears in the client's task list when available. Before each uncovered local step, **Accept once** runs that step, **Always accept** covers the remaining planned local steps, and **Cancel** skips the step. Outstanding work goes in the target project's `docs/HANDOFF.md`. See [execution and approvals](references/execution.md#guided-workflow).
+The installer copies the skill to `~/.agents/skills/oss-showcase/` and creates a Claude Code link.
 
 ## Demo
 
-[![Watch OSS Showcase in Codex and Claude Code](docs/assets/showcase-demo-poster.png)](docs/assets/showcase-demo.mp4)
+[![Watch OSS Showcase plan a showcase for Task Counter](docs/assets/showcase-demo-poster.png)](docs/assets/showcase-demo.mp4)
 
-The recording shows Codex CLI, Claude Code CLI, and Claude Code in the Claude desktop app using the skill on the same synthetic Task Counter project. Each run proposes a showcase plan and pauses at the first decision.
+On a tiny synthetic Python CLI, Codex CLI and Claude Code CLI propose a showcase plan and pause at the first decision. The Claude desktop clip shows the plan and approval screen. [Reproduce the walkthrough](.agents/showcase/demo/README.md).
 
-[Reproduce the guided walkthrough](.agents/showcase/demo/README.md).
+## Guided showcase workflow
+
+1. **Find the angle.** Identify the audience, compare alternatives, and choose a message the code can support. [Market discovery](references/research.md)
+2. **Make it tangible.** Set the visual direction, prepare the README, and record a real run on a safe fixture. [Branding](references/branding.md) · [Demo recording](references/demo.md)
+3. **Stage the project site.** Generate HTML, CSS, and a sitemap with bundled Python tools. Verify copy, discovery metadata, and the files allowed into the Pages build. [Generation](references/state.md) · [SEO, GEO, and AEO](references/publishing.md#discovery)
+4. **Plan the announcement.** Pick channels and dates, draft the posts, and verify the live site before sending traffic. [Launch distribution](references/distribution.md)
+
+Use **Accept once** for one local step, **Always accept** for the remaining eligible local steps, or **Cancel** to skip the current step. Tasks appear in the client when supported. The handoff tracks unfinished work, and deploys and posts require separate confirmation. Existing project files stay read-only unless the skill can verify that it created them and they still match its last write. Existing project logic and workflows stay read-only. [Execution and approvals](references/execution.md)
 
 ## What you can do
 
-| Goal | Start here |
+| Goal | Mode |
 | --- | --- |
-| Review an existing README or site before editing | Run `oss-showcase audit` for a read-only review. |
-| Validate the audience and positioning | Run `oss-showcase research`. See [market discovery](references/research.md). |
-| Build or refresh the public presentation | Use the guided plan or the [generation workflow](references/state.md). |
-| Prepare a launch | Run `oss-showcase launch` for a [channel plan, calendar, and draft posts](references/distribution.md). |
-| Publish a reviewed site | Use `oss-showcase publish` with an approved target and follow the [GitHub Pages procedure](references/publishing.md#publish-to-github-pages). |
+| Review a README or site in read-only mode | `audit` |
+| Verify audience, alternatives, and positioning | `research` |
+| Review what changed and refresh stale showcase material | `refresh` |
+| Verify a tagged release and review release-specific material | `prepare-release <ref>` |
+| Draft a channel plan, calendar, and posts | `launch` |
+| Publish to an approved destination | `publish` |
 
-See [optional integrations](references/integrations.md) for the connected tools available to each stage.
+See [all operating modes](references/modes.md) and [optional integrations](references/integrations.md).
 
 ## Contribute
 
-Use [CONTRIBUTING.md](CONTRIBUTING.md) for local checks and PRs, [architecture](docs/architecture.md) for the package layout, and [SECURITY.md](SECURITY.md) for private vulnerability reporting.
+From a checkout of this repository, run the local checks:
+
+```sh
+scripts/verify
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development and PR guidance, [architecture](docs/architecture.md) for the package layout, and [SECURITY.md](SECURITY.md) for private vulnerability reporting.

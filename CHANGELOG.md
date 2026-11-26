@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 (2026-11-26)
+
+- Clarify installation, the first approval, and what the recorded demo shows in the packaged README.
+
 ## 0.2.1 (2026-11-26)
 
 - Keep existing project files and workflows read-only across all showcase modes. The generator updates a file only when its ledger confirms a prior write and the file still matches that write.
