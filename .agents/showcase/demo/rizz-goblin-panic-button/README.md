@@ -2,10 +2,13 @@
 
 Rizz Goblin Panic Button is a fictional Python CLI used to demonstrate the OSS Showcase skill. The CLI turns synthetic desk-chaos signals into a goblin alert. The GIFs replay the final text from real agent sessions and stop at the first decision in guided mode.
 
-| Client | Capture |
-| --- | --- |
-| Codex CLI | [Recorded guided plan](../../../../docs/assets/codex-goblin.gif) |
-| Claude Code CLI | [Recorded guided plan](../../../../docs/assets/claude-goblin.gif) |
+## Codex CLI
+
+![Codex CLI identifies the fictional project, shows its quickstart and pauses for approval](../../../../docs/assets/codex-goblin.gif)
+
+## Claude Code CLI
+
+![Claude Code CLI shows the guided plan and asks for the first approval](../../../../docs/assets/claude-goblin.gif)
 
 ## Repeat the walkthrough
 
