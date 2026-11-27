@@ -15,6 +15,10 @@ The Release workflow runs on manual dispatch. A maintainer chooses the version a
 3. Verify the release tag points to the commit shown in the workflow run and its archive includes the skill, references, scripts and templates.
 4. If publishing fails after tagging, check whether the release exists and rerun the original workflow if needed. The workflow can reuse a tag at the same commit. For a bad published release, fix the change and publish a new version.
 
+## Deploy the OSS Showcase site
+
+In **Settings → Pages → Build and deployment**, select **GitHub Actions** as the source. Then use **Actions → Deploy GitHub Pages → Run workflow**, select `main`, and dispatch. The workflow validates and publishes the allowlisted static bundle. The release workflow remains a separate manual operation.
+
 ## Publish a target project's showcase
 
 Review the target landing's [copy and discovery checks](../references/publishing.md#discovery), then stage the exact Pages artifact. Confirm the deployment, verify the live URL and assets, and use that verified page in the [launch calendar](../references/distribution.md). Confirm each channel submission separately.
