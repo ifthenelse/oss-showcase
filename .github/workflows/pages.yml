@@ -1,0 +1,42 @@
+name: Deploy GitHub Pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: oss-showcase-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    if: github.repository == 'ifthenelse/oss-showcase' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - run: python3 .agents/showcase/validate.py --stage _showcase_site
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4.0.0
+        with:
+          path: _showcase_site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Check configured Pages URL
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+        id: pages
+      - name: Verify public origin and path
+        env:
+          PAGES_URL: ${{ steps.pages.outputs.base_url }}
+          EXPECTED_URL: https://ifthenelse.github.io/oss-showcase/
+        run: |
+          test "${PAGES_URL%/}/" = "$EXPECTED_URL"
+      - name: Deploy reviewed artifact
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+        id: publish
