@@ -46,7 +46,7 @@ class InstallerTest(unittest.TestCase):
                 "docs/assets/otto-s.svg",
                 "docs/assets/otto-s-favicon.svg",
             )
-            for name in ("README.md", "SKILL.md", *brand_files):
+            for name in ("LICENSE", "README.md", "SKILL.md", *brand_files):
                 destination = source / name
                 destination.parent.mkdir(exist_ok=True, parents=True)
                 shutil.copyfile(PACKAGE / name, destination)
@@ -71,7 +71,7 @@ class InstallerTest(unittest.TestCase):
             subprocess.run(command, env=env, check=True, capture_output=True)
             subprocess.run(command, env=env, check=True, capture_output=True)
             self.assertEqual((home / ".claude/skills/oss-showcase").resolve(), installed.resolve())
-            for name in brand_files:
+            for name in ("LICENSE", *brand_files):
                 self.assertEqual((installed / name).read_bytes(), (PACKAGE / name).read_bytes())
             self.assertTrue((installed / "references/publishing.md").is_file())
             self.assertTrue((installed / "templates/profiles/skill.json").is_file())
