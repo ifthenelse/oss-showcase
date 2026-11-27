@@ -3,6 +3,7 @@
 ## 0.2.2 (2026-11-27)
 
 - License OSS Showcase under MIT and include the license in shell installations.
+- Clarify installation, the first approval, and what the recorded demo shows in the packaged README.
 
 ## 0.2.1 (2026-11-26)
 
