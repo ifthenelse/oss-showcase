@@ -1,0 +1,9 @@
+**Rizz Goblin Panic Button** is a fictional local Python 3.10+ CLI for scoring
+desk chaos. Guided mode, no Git ref available.
+**Quickstart** `python3 rizz_goblin.py cursed-tabs keyboard-crumbs`
+**Expected output** `Goblin alert: TOUCH GRASS (5 chaos points)` — reproduced
+locally, and both tests passed.
+**Showcase plan** Market and competitor discovery → branding → README → CLI demo
+→ GitHub Pages → SEO, GEO, AEO and checks → launch calendar and channel drafts.
+**First approval** Proceed with local-only discovery and provisional positioning?
+Remote research remains unverified.

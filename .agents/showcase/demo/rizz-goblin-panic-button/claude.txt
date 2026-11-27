@@ -1,0 +1,14 @@
+1. **Fictional fixture:** Rizz Goblin Panic Button is a made-up local Python CLI, with no
+dependencies and Python 3.10 or later.
+2. **README example:** `python3 rizz_goblin.py cursed-tabs keyboard-crumbs` prints
+`Goblin alert: TOUCH GRASS (5 chaos points)`. Tests run with `python3 -m unittest`.
+3. **Guided plan:** market research, branding, README glow-up, fixture-based demo,
+project page, SEO/GEO/AEO, quality checks, launch calendar, then separate Product Hunt, X
+and Reddit drafts. Each channel publication is its own task, and Pages deployment is
+confirmed before any launch traffic.
+4. **Planned changes:** new showcase files only. The existing README, code and tests stay
+read-only. I haven't written a plan or handoff file, run commands, edited anything or
+made remote calls.
+5. **First approval: Proceed with market discovery and competitor research?** This step
+reads public sources only and changes no files. Choose **Accept once**, **Always accept**
+(the remaining local steps) or **Cancel**. I'm stopping here until you choose.

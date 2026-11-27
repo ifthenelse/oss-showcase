@@ -7,3 +7,5 @@ Open the project in the client being recorded. Use read-only permissions or plan
 Record the prompt and confirm that each client loads the skill, identifies the fixture, and offers the first decision. Leave the decision unanswered. The current video contains real Codex CLI and Claude Code CLI executions and a review of the completed plan in the Claude desktop app. The terminal clips filter the clients' JSON output to keep the response visible without exposing raw traces. Versions used for the terminal clips were Codex CLI 0.172.0, Claude Code 2.1.326, and VHS 0.12.1.
 
 Use `sh run.sh` from this directory for the independent generator smoke test.
+
+See also the [Rizz Goblin Panic Button example](rizz-goblin-panic-button/README.md) for animated replays of real Codex CLI and Claude Code CLI sessions on a fictional project.

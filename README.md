@@ -34,6 +34,8 @@ The installer copies the skill to `~/.agents/skills/oss-showcase/` and creates a
 
 On a tiny synthetic Python CLI, Codex CLI and Claude Code CLI propose a showcase plan and pause at the first decision. The Claude desktop clip shows the plan and approval screen. [Reproduce the walkthrough](.agents/showcase/demo/README.md).
 
+[See both terminal GIFs on a fictional project](.agents/showcase/demo/rizz-goblin-panic-button/README.md).
+
 ## Guided showcase workflow
 
 1. **Find the angle.** Identify the audience, compare alternatives, and choose a message the code can support. [Market discovery](references/research.md)
