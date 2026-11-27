@@ -16,3 +16,10 @@ __pycache__/
 .specstory/
 .claude/settings.local.json
 .claude/worktrees/
+
+# Local launch planning and handoff
+/.agents/product-marketing.md
+/.agents/showcase/research.md
+/.agents/showcase/launch/
+/docs/HANDOFF.md
+/devrel-context.md

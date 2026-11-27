@@ -13,7 +13,6 @@
   "presentation": {
     "inputs": [
       ".agents/product-facts.json",
-      ".agents/product-marketing.md",
       ".agents/brand-guidelines.md",
       ".agents/showcase/templates/index.html",
       ".agents/showcase/templates/showcase.css",
@@ -29,26 +28,6 @@
       "docs/index.html",
       "docs/sitemap.xml",
       "docs/assets/showcase.css"
-    ]
-  },
-  "distribution": {
-    "inputs": [
-      ".agents/product-facts.json",
-      ".agents/product-marketing.md",
-      ".agents/showcase/research.md",
-      ".agents/brand-guidelines.md",
-      "README.md",
-      "docs/index.html",
-      "docs/assets/showcase-demo.mp4",
-      "docs/assets/social.png",
-      "CHANGELOG.md",
-      "LICENSE"
-    ],
-    "outputs": [
-      ".agents/showcase/launch/README.md",
-      ".agents/showcase/launch/product-hunt/README.md",
-      ".agents/showcase/launch/reddit.md",
-      ".agents/showcase/launch/x.md"
     ]
   }
 }
