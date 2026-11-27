@@ -22,7 +22,7 @@ for directory in agents docs docs/assets references scripts templates templates/
     fi
 done
 
-set -- README.md agents/openai.yaml docs/assets/oss-showcase-lockup.svg \
+set -- LICENSE README.md agents/openai.yaml docs/assets/oss-showcase-lockup.svg \
     docs/assets/otto-s.svg docs/assets/otto-s-favicon.svg references/*.md scripts/*.py scripts/install.sh scripts/verify \
     templates/*.cjs templates/*.css templates/*.html templates/*.in templates/*.json \
     templates/*.md templates/*.tape templates/*.yml templates/profiles/*.json SKILL.md
